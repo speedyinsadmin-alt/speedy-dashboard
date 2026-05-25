@@ -70,7 +70,7 @@
   .badge-queued { background:rgba(42,64,112,0.4); color:var(--gray); border:1px solid #2a4070; }
 
   /* Phase cards */
-  .phases { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem; }
+  .phases { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-bottom:2rem; }
   .phase-card { background:var(--navy2); border:1px solid #1e3560; border-radius:12px; padding:1.5rem; }
   .phase-card.active { border-color:rgba(212,43,43,0.5); }
   .phase-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; }
@@ -273,8 +273,24 @@
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Inbound call scripts</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Renewal and cross-sell scripts</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">New business quoting scripts</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Agent training on scripts</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Agent training and role-play sessions</div></div></div>
     </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <div>
+          <div class="phase-name">📣 Phase 4 · Marketing</div>
+          <div class="phase-count">0 of 4 tasks complete</div>
+        </div>
+        <span class="phase-badge badge-queued">Queued</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill fill-gray" style="width:0%"></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Marketing strategy and annual plan</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Client outreach campaigns</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Referral and retention program setup</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Campaign performance tracking and reporting</div></div></div>
+    </div>
+
   </div>
 
   <div class="section-title animate d4">🔴 Action items</div>
