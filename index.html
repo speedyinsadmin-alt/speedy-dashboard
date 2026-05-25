@@ -105,6 +105,51 @@
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
   .animate { animation: fadeUp 0.6s ease forwards; opacity:0; }
   .d1{animation-delay:.1s} .d2{animation-delay:.2s} .d3{animation-delay:.3s} .d4{animation-delay:.4s} .d5{animation-delay:.5s}
+
+  @media (max-width: 768px) {
+    header { flex-direction:column; align-items:flex-start; gap:1rem; padding:1rem 1.25rem; }
+    .logo-area img { height:52px; }
+    .agency-name { font-size:1.4rem; }
+    .header-meta { text-align:left; width:100%; }
+    main { padding:1rem 1.25rem; }
+    .metrics { grid-template-columns:repeat(2,1fr); gap:8px; }
+    .metric-val { font-size:2rem; }
+    .circles-row { grid-template-columns:repeat(3,1fr); gap:8px; }
+    .circle-wrap { width:70px; height:70px; }
+    .circle-wrap svg { width:70px; height:70px; }
+    .circle-pct { font-size:1rem; }
+    .circle-label { font-size:0.65rem; }
+    .circle-sub { font-size:0.6rem; }
+    .phases { grid-template-columns:1fr; }
+    .actions-table { font-size:0.72rem; }
+    .actions-table th, .actions-table td { padding:8px 8px; }
+    .section-title { font-size:0.9rem; }
+    .phase-name { font-size:0.95rem; }
+    .task-text { font-size:0.75rem; }
+    .task-note { font-size:0.65rem; }
+  }
+
+  @media (max-width: 480px) {
+    header { padding:1rem; }
+    .agency-name { font-size:1.2rem; }
+    .agency-sub { font-size:0.65rem; }
+    main { padding:0.75rem 1rem; }
+    .metrics { grid-template-columns:repeat(2,1fr); gap:6px; }
+    .metric-card { padding:0.75rem 1rem; }
+    .metric-val { font-size:1.7rem; }
+    .metric-label { font-size:0.62rem; }
+    .circles-row { grid-template-columns:repeat(3,1fr); gap:6px; }
+    .circle-card { padding:0.75rem 0.5rem; }
+    .circle-wrap { width:60px; height:60px; }
+    .circle-wrap svg { width:60px; height:60px; }
+    .circle-pct { font-size:0.85rem; }
+    .phase-card { padding:1rem; }
+    .actions-table thead { display:none; }
+    .actions-table tr { display:block; border-bottom:1px solid #1e3560; padding:8px 0; }
+    .actions-table td { display:block; border:none; padding:3px 0; }
+    .actions-table td:first-child { font-weight:600; }
+    footer { font-size:0.65rem; padding:1.25rem 1rem; }
+  }
 </style>
 </head>
 <body>
@@ -151,7 +196,7 @@
   <div class="circles-row animate d2">
     <div class="circle-card active-phase">
       <div class="circle-wrap">
-        <svg width="90" height="90" viewBox="0 0 90 90">
+        <svg width="100%" height="100%" viewBox="0 0 90 90">
           <circle class="circle-bg" cx="45" cy="45" r="38"/>
           <circle class="circle-fill active-color" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="158" id="c0"/>
         </svg>
@@ -163,7 +208,7 @@
     </div>
     <div class="circle-card">
       <div class="circle-wrap">
-        <svg width="90" height="90" viewBox="0 0 90 90">
+        <svg width="100%" height="100%" viewBox="0 0 90 90">
           <circle class="circle-bg" cx="45" cy="45" r="38"/>
           <circle class="circle-fill queue-color" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76" id="c1"/>
         </svg>
@@ -175,7 +220,7 @@
     </div>
     <div class="circle-card">
       <div class="circle-wrap">
-        <svg width="90" height="90" viewBox="0 0 90 90">
+        <svg width="100%" height="100%" viewBox="0 0 90 90">
           <circle class="circle-bg" cx="45" cy="45" r="38"/>
           <circle class="circle-fill queue-color" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76"/>
         </svg>
@@ -187,7 +232,7 @@
     </div>
     <div class="circle-card">
       <div class="circle-wrap">
-        <svg width="90" height="90" viewBox="0 0 90 90">
+        <svg width="100%" height="100%" viewBox="0 0 90 90">
           <circle class="circle-bg" cx="45" cy="45" r="38"/>
           <circle class="circle-fill queue-color" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76"/>
         </svg>
@@ -199,7 +244,7 @@
     </div>
     <div class="circle-card">
       <div class="circle-wrap">
-        <svg width="90" height="90" viewBox="0 0 90 90">
+        <svg width="100%" height="100%" viewBox="0 0 90 90">
           <circle class="circle-bg" cx="45" cy="45" r="38"/>
           <circle class="circle-fill queue-color" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76"/>
         </svg>
