@@ -52,7 +52,7 @@
   .metric-label { font-size:0.72rem; color:var(--gray); letter-spacing:2px; text-transform:uppercase; margin-top:4px; }
 
   /* Circle charts row */
-  .circles-row { display:grid; grid-template-columns:repeat(5,1fr); gap:1rem; margin-bottom:2rem; }
+  .circles-row { display:grid; grid-template-columns:repeat(6,1fr); gap:1rem; margin-bottom:2rem; }
   .circle-card { background:var(--navy2); border:1px solid #1e3560; border-radius:12px; padding:1.5rem 1rem; text-align:center; }
   .circle-card.active-phase { border-color:var(--red); }
   .circle-wrap { position:relative; width:90px; height:90px; margin:0 auto 0.8rem; }
@@ -254,6 +254,18 @@
       <div class="circle-sub">Marketing</div>
       <span class="phase-badge badge-queued">Queued</span>
     </div>
+    <div class="circle-card" style="border-color:rgba(100,100,255,0.4)">
+      <div class="circle-wrap">
+        <svg width="100%" height="100%" viewBox="0 0 90 90">
+          <circle class="circle-bg" cx="45" cy="45" r="38"/>
+          <circle class="circle-fill" style="stroke:#6666ff" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76"/>
+        </svg>
+        <div class="circle-pct">0%</div>
+      </div>
+      <div class="circle-label">Phase 5</div>
+      <div class="circle-sub">Login & Sync</div>
+      <span class="phase-badge" style="background:rgba(100,100,255,0.2);color:#aaaaff;border:1px solid rgba(100,100,255,0.4);">Pending</span>
+    </div>
   </div>
 
   <div class="section-title animate d3">Phase details</div>
@@ -336,6 +348,22 @@
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Campaign performance tracking and reporting</div></div></div>
     </div>
 
+  </div>
+
+  <div class="phase-card" style="border-color:rgba(100,100,255,0.4);grid-column:1/-1">
+      <div class="phase-header">
+        <div>
+          <div class="phase-name">🔐 Phase 5 · User login & sync system</div>
+          <div class="phase-count">Pending owner approval · 0 of 4 tasks</div>
+        </div>
+        <span class="phase-badge" style="background:rgba(100,100,255,0.2);color:#aaaaff;border:1px solid rgba(100,100,255,0.4);">Pending Approval</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%;background:#6666ff"></div></div>
+      <div class="task"><div class="task-dot" style="background:rgba(100,100,255,0.2);border:1px solid #6666ff;color:#aaaaff;">○</div><div><div class="task-text">Owner discussion & approval meeting</div><div class="task-note">Discuss Google Workspace SSO across all 4 branches</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Chrome profile setup per agent — all branches</div><div class="task-note">Each agent signs into Chrome with @speedyins.com account</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Google Drive shared workspace setup</div><div class="task-note">Files, templates, scripts synced across all branches</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Optional: Windows login tied to Google account</div><div class="task-note">Google Credential Provider for Windows</div></div></div>
+    </div>
   </div>
 
   <div class="section-title animate d4">🔴 Action items</div>
