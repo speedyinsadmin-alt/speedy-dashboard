@@ -52,7 +52,7 @@
   .metric-label { font-size:0.72rem; color:var(--gray); letter-spacing:2px; text-transform:uppercase; margin-top:4px; }
 
   /* Circle charts row */
-  .circles-row { display:grid; grid-template-columns:repeat(6,1fr); gap:1rem; margin-bottom:2rem; }
+  .circles-row { display:grid; grid-template-columns:repeat(7,1fr); gap:1rem; margin-bottom:2rem; }
   .circle-card { background:var(--navy2); border:1px solid #1e3560; border-radius:12px; padding:1.5rem 1rem; text-align:center; }
   .circle-card.active-phase { border-color:var(--red); }
   .circle-wrap { position:relative; width:90px; height:90px; margin:0 auto 0.8rem; }
@@ -175,7 +175,7 @@
   <div class="section-title animate d1">Project metrics</div>
   <div class="metrics animate d1">
     <div class="metric-card">
-      <div class="metric-val done">9</div>
+      <div class="metric-val done">10</div>
       <div class="metric-label">Tasks completed</div>
     </div>
     <div class="metric-card">
@@ -198,9 +198,9 @@
       <div class="circle-wrap">
         <svg width="100%" height="100%" viewBox="0 0 90 90">
           <circle class="circle-bg" cx="45" cy="45" r="38"/>
-          <circle class="circle-fill active-color" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="74" id="c0"/>
+          <circle class="circle-fill active-color" cx="45" cy="45" r="38" stroke-dasharray="238.76" stroke-dashoffset="60" id="c0"/>
         </svg>
-        <div class="circle-pct">69%</div>
+        <div class="circle-pct">75%</div>
       </div>
       <div class="circle-label">Pre-phase</div>
       <div class="circle-sub">Tech setup</div>
@@ -274,7 +274,7 @@
       <div class="phase-header">
         <div>
           <div class="phase-name">⚙️ Pre-phase · Tech setup</div>
-          <div class="phase-count">9 of 13 tasks complete</div>
+          <div class="phase-count">10 of 13 tasks complete</div>
         </div>
         <span class="phase-badge badge-active">Active</span>
       </div>
@@ -336,7 +336,7 @@
     <div class="phase-card">
       <div class="phase-header">
         <div>
-          <div class="phase-name">📣 Phase 4 · Marketing</div>
+          <div class="phase-name">🎨 Phase 4 · Full rebrand</div>
           <div class="phase-count">0 of 4 tasks complete</div>
         </div>
         <span class="phase-badge badge-queued">Queued</span>
@@ -353,7 +353,26 @@
   <div class="phase-card" style="border-color:rgba(100,100,255,0.4);grid-column:1/-1">
       <div class="phase-header">
         <div>
-          <div class="phase-name">🔐 Phase 5 · User login & sync system</div>
+          
+    <div class="phase-card">
+      <div class="phase-header">
+        <div>
+          <div class="phase-name">📣 Phase 5 · Marketing</div>
+          <div class="phase-count">0 of 4 tasks complete</div>
+        </div>
+        <span class="phase-badge badge-queued">Queued</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill fill-gray" style="width:0%"></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Marketing strategy and annual plan</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Client outreach campaigns</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Referral and retention program</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Campaign performance tracking</div></div></div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <div>
+          <div class="phase-name">🔐 Phase 6 · User login & sync system</div>
           <div class="phase-count">Pending owner approval · 0 of 4 tasks</div>
         </div>
         <span class="phase-badge" style="background:rgba(100,100,255,0.2);color:#aaaaff;border:1px solid rgba(100,100,255,0.4);">Pending Approval</span>
