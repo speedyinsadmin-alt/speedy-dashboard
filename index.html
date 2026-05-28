@@ -169,9 +169,9 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
   <div class="section-title a1">Project metrics</div>
   <div class="metrics a1">
     <div class="metric-card"><div class="metric-val done">11</div><div class="metric-label">Tasks completed</div></div>
-    <div class="metric-card"><div class="metric-val progress">3</div><div class="metric-label">In progress</div></div>
+    <div class="metric-card"><div class="metric-val progress">1</div><div class="metric-label">In progress</div></div>
     <div class="metric-card"><div class="metric-val done">11</div><div class="metric-label">Tasks completed</div></div>
-    <div class="metric-card"><div class="metric-val" style="color:var(--blue)">30%</div><div class="metric-label">Overall completion</div></div>
+    <div class="metric-card"><div class="metric-val" style="color:var(--blue)">39%</div><div class="metric-label">Overall completion</div></div>
   </div>
 
   <div class="section-title a2">Phase progress</div>
@@ -180,15 +180,15 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
       <div class="circle-wrap">
         <svg width="76" height="76" viewBox="0 0 76 76">
           <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="50" />
+          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="0" />
         </svg>
-        <div class="circle-pct">75%</div>
+        <div class="circle-pct">100%</div>
       </div>
       <div class="circle-label">Pre-phase</div>
       <div class="circle-sub">Tech setup</div>
-      <span class="phase-badge badge-active">Active</span>
+      <span class="phase-badge badge-active" style="background:rgba(34,197,94,0.2);color:#22c55e;border:1px solid rgba(34,197,94,0.4);">Complete ✓</span>
     </div>
-    <div class="circle-card">
+    <div class="circle-card" style="border-color:#1e3560">
       <div class="circle-wrap">
         <svg width="76" height="76" viewBox="0 0 76 76">
           <circle class="circle-bg" cx="38" cy="38" r="32"/>
@@ -197,18 +197,6 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
         <div class="circle-pct">0%</div>
       </div>
       <div class="circle-label">Phase 1</div>
-      <div class="circle-sub">Agent adoption</div>
-      <span class="phase-badge badge-queued">Queued</span>
-    </div>
-    <div class="circle-card">
-      <div class="circle-wrap">
-        <svg width="76" height="76" viewBox="0 0 76 76">
-          <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill queue-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="201.06"/>
-        </svg>
-        <div class="circle-pct">0%</div>
-      </div>
-      <div class="circle-label">Phase 2</div>
       <div class="circle-sub">Automation+CRM</div>
       <span class="phase-badge badge-queued">Queued</span>
     </div>
@@ -220,9 +208,21 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
         </svg>
         <div class="circle-pct">0%</div>
       </div>
-      <div class="circle-label">Phase 3</div>
+      <div class="circle-label">Phase 2</div>
       <div class="circle-sub">Sales scripts</div>
       <span class="phase-badge badge-queued">Queued</span>
+    </div>
+    <div class="circle-card">
+      <div class="circle-wrap">
+        <svg width="76" height="76" viewBox="0 0 76 76">
+          <circle class="circle-bg" cx="38" cy="38" r="32"/>
+          <circle class="circle-fill queue-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="201.06"/>
+        </svg>
+        <div class="circle-pct">0%</div>
+      </div>
+      <div class="circle-label">Phase 3</div>
+      <div class="circle-sub">Full rebrand</div>
+      <span class="phase-badge badge-active">Active</span>
     </div>
     <div class="circle-card" style="border-color:rgba(212,43,43,0.5)">
       <div class="circle-wrap">
@@ -233,7 +233,7 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
         <div class="circle-pct">20%</div>
       </div>
       <div class="circle-label">Phase 4</div>
-      <div class="circle-sub">Full rebrand</div>
+      <div class="circle-sub">Marketing</div>
       <span class="phase-badge badge-active">Active</span>
     </div>
     <div class="circle-card">
@@ -245,8 +245,8 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
         <div class="circle-pct">0%</div>
       </div>
       <div class="circle-label">Phase 5</div>
-      <div class="circle-sub">Marketing</div>
-      <span class="phase-badge badge-queued">Queued</span>
+      <div class="circle-sub">Login & sync</div>
+      <span class="phase-badge badge-pending">Pending</span>
     </div>
     <div class="circle-card" style="border-color:rgba(100,100,255,0.4)">
       <div class="circle-wrap">
@@ -256,9 +256,9 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
         </svg>
         <div class="circle-pct" style="font-size:0.75rem;color:var(--gray)">Pending</div>
       </div>
-      <div class="circle-label">Phase 6</div>
-      <div class="circle-sub">Login & sync</div>
-      <span class="phase-badge badge-pending">Approval needed</span>
+      <div class="circle-label">Training</div>
+      <div class="circle-sub">Ongoing</div>
+      <span class="phase-badge" style="background:rgba(99,99,255,0.2);color:#aaaaff;border:1px solid rgba(99,99,255,0.4);">Ongoing</span>
     </div>
   </div>
 
@@ -274,27 +274,27 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
       <div class="branch-bar"><div class="branch-fill" style="width:100%;background:var(--success)"></div></div>
       <div class="branch-stat">3 of 3 workstations ✅</div>
     </div>
-    <div class="branch-card" style="border-color:rgba(245,158,11,0.4)">
+    <div class="branch-card" style="border-color:rgba(34,197,94,0.4);">
       <div class="branch-name">Riverside 01</div>
-      <div class="branch-bar"><div class="branch-fill" style="width:75%;background:var(--warning)"></div></div>
-      <div class="branch-stat">3 of 4 — Yasmin pending</div>
+      <div class="branch-bar"><div class="branch-fill" style="width:100%;background:var(--success)"></div></div>
+      <div class="branch-stat">4 of 4 workstations ✅</div>
     </div>
-    <div class="branch-card" style="border-color:rgba(245,158,11,0.3)">
+    <div class="branch-card" style="border-color:rgba(34,197,94,0.4);">
       <div class="branch-name">Lake Elsinore</div>
-      <div class="branch-bar"><div class="branch-fill" style="width:0%;background:var(--warning)"></div></div>
-      <div class="branch-stat">0 of 1 — Chris on leave</div>
+      <div class="branch-bar"><div class="branch-fill" style="width:100%;background:var(--success)"></div></div>
+      <div class="branch-stat">1 of 1 workstation ✅</div>
     </div>
   </div>
 
   <div class="section-title a3">Phase details</div>
   <div class="phases a3">
 
-    <div class="phase-card active">
+    <div class="phase-card" style="border-color:rgba(34,197,94,0.5);">
       <div class="phase-header">
-        <div><div class="phase-name">⚙️ Pre-phase · Tech setup</div><div class="phase-count">10 of 13 tasks complete</div></div>
-        <span class="phase-badge badge-active">Active</span>
+        <div><div class="phase-name">⚙️ Pre-phase · Tech setup</div><div class="phase-count">16 of 16 tasks complete ✅</div></div>
+        <span class="phase-badge" style="background:rgba(34,197,94,0.2);color:#22c55e;border:1px solid rgba(34,197,94,0.4);">Complete ✓</span>
       </div>
-      <div class="progress-bar"><div class="progress-fill fill-red" style="width:75%"></div></div>
+      <div class="progress-bar"><div class="progress-fill fill-green" style="width:100%"></div></div>
       <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">HawkLink extension installed</div><div class="task-note">Tony's computer ✅</div></div></div>
       <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">HawkLink client data confirmed</div><div class="task-note">Samuel Rodriguez test ✅</div></div></div>
       <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">RingCentral CMSScreenPop.exe bridge configured</div></div></div>
@@ -305,27 +305,13 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
       <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">RingCentral login migration email sent</div><div class="task-note">All 13 agents — May 25, 2026 ✅</div></div></div>
       <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">RingCentral screen pop — Riverside 02</div><div class="task-note">3 of 3 workstations ✅</div></div></div>
       <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">RingCentral screen pop — Riverside 01 (partial)</div><div class="task-note">3 of 4 done ✅</div></div></div>
-      <div class="task"><div class="task-dot dot-progress">~</div><div><div class="task-text">RingCentral screen pop — Riverside 01 (Yasmin)</div><div class="task-note">In progress</div></div></div>
-      <div class="task"><div class="task-dot dot-progress">~</div><div><div class="task-text">RingCentral screen pop — Lake Elsinore</div><div class="task-note">Chris on leave</div></div></div>
+      <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">RingCentral screen pop — Riverside 01 (Yasmin)</div><div class="task-note">Done ✅</div></div></div>
+      <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">RingCentral screen pop — Lake Elsinore</div><div class="task-note">Done ✅</div></div></div>
       <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">HawkLink extension confirmed working</div><div class="task-note">Fix broken carrier links on the go as agents report them ✅</div></div></div>
     </div>
-
     <div class="phase-card">
       <div class="phase-header">
-        <div><div class="phase-name">👥 Phase 1 · Agent adoption</div><div class="phase-count">0 of 5 tasks complete</div></div>
-        <span class="phase-badge badge-queued">Queued</span>
-      </div>
-      <div class="progress-bar"><div class="progress-fill fill-gray" style="width:0%"></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">HawkLink rollout to all workstations</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">RingCentral setup on all computers</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Agent training — HawkLink workflow</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Agent training — RingCentral screen pop</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Verify click-to-dial all agents</div></div></div>
-    </div>
-
-    <div class="phase-card">
-      <div class="phase-header">
-        <div><div class="phase-name">🤖 Phase 2 · Automation + CRM</div><div class="phase-count">0 of 6 tasks complete</div></div>
+        <div><div class="phase-name">🤖 Phase 1 · Automation + CRM</div><div class="phase-count">0 of 8 tasks complete</div></div>
         <span class="phase-badge badge-queued">Queued</span>
       </div>
       <div class="progress-bar"><div class="progress-fill fill-gray" style="width:0%"></div></div>
@@ -335,11 +321,13 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Test and verify all automations</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">CRM selection — AgencyZoom recommended</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">CRM setup and integration with HawkSoft</div></div></div>
+      <div class="task"><div class="task-dot dot-progress">~</div><div><div class="task-text">Study ITC TurboRater follow-up roles & features</div><div class="task-note">autorating.turborater.com · already in HawkSoft bridges</div></div></div>
+      <div class="task"><div class="task-dot dot-progress">~</div><div><div class="task-text">Evaluate & activate AgencyBuzz</div><div class="task-note">Already included with TurboRater · free to activate</div></div></div>
     </div>
 
     <div class="phase-card">
       <div class="phase-header">
-        <div><div class="phase-name">📝 Phase 3 · Sales scripts</div><div class="phase-count">0 of 4 tasks complete</div></div>
+        <div><div class="phase-name">📝 Phase 2 · Sales scripts</div><div class="phase-count">0 of 4 tasks complete</div></div>
         <span class="phase-badge badge-queued">Queued</span>
       </div>
       <div class="progress-bar"><div class="progress-fill fill-gray" style="width:0%"></div></div>
@@ -349,27 +337,25 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Agent training on scripts</div></div></div>
     </div>
 
-    <div class="phase-card pending-phase">
+    <div class="phase-card" style="border-color:rgba(212,43,43,0.5)">
       <div class="phase-header">
-        <div><div class="phase-name">🎨 Phase 4 · Full rebrand</div><div class="phase-count">0 of 8 tasks — pending approval</div></div>
+        <div><div class="phase-name">🎨 Phase 3 · Full rebrand</div><div class="phase-count">1 of 8 tasks complete</div></div>
         <span class="phase-badge badge-active">Active</span>
       </div>
-      <div class="progress-bar"><div class="progress-fill fill-red" style="width:20%"></div></div>
-      <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">Strategy & research completed</div><div class="task-note">Platform: Webflow · Research-backed decision ✅</div></div></div>
+      <div class="progress-bar"><div class="progress-fill fill-red" style="width:13%"></div></div>
+      <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">Strategy & research completed</div><div class="task-note">Platform: Webflow · Research-backed ✅</div></div></div>
       <div class="task"><div class="task-dot dot-progress">~</div><div><div class="task-text">Collect all credentials & accounts</div><div class="task-note">Wix · Facebook · Instagram · Google · Twitter · Yelp</div></div></div>
-      <div class="task"><div class="task-dot dot-progress">~</div><div><div class="task-text">Collect all credentials and accounts</div><div class="task-note">Wix · Facebook · Instagram · Google · Twitter · Yelp</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Present rebrand proposal — agree on design</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Build detailed presentation deck</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Website redesign — mobile-first</div><div class="task-note">Replace current Wix site</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Social media rebrand</div><div class="task-note">FB · IG · TikTok · Google · Twitter</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Brand identity package</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Email signatures — all 13 agents</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Printed materials and signage</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Email signatures — all 13 agents + printed materials</div></div></div>
     </div>
 
     <div class="phase-card">
       <div class="phase-header">
-        <div><div class="phase-name">📣 Phase 5 · Marketing</div><div class="phase-count">0 of 4 tasks complete</div></div>
+        <div><div class="phase-name">📣 Phase 4 · Marketing</div><div class="phase-count">0 of 4 tasks complete</div></div>
         <span class="phase-badge badge-queued">Queued</span>
       </div>
       <div class="progress-bar"><div class="progress-fill fill-gray" style="width:0%"></div></div>
@@ -381,37 +367,169 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
 
     <div class="phase-card" style="border-color:rgba(100,100,255,0.4)">
       <div class="phase-header">
-        <div><div class="phase-name">🔐 Phase 6 · Login & sync</div><div class="phase-count">0 of 4 tasks — pending approval</div></div>
-        <span class="phase-badge badge-pending">Approval needed</span>
+        <div><div class="phase-name">🔐 Phase 5 · Login & sync</div><div class="phase-count">0 of 4 tasks — pending approval</div></div>
+        <span class="phase-badge badge-pending">Pending</span>
       </div>
       <div class="progress-bar"><div class="progress-fill fill-purple" style="width:0%"></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Owner discussion and approval</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Chrome profile setup per agent</div><div class="task-note">All 4 branches</div></div></div>
-      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Google Drive shared workspace</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Chrome profile setup per agent — all branches</div></div></div>
+      <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Google Drive shared workspace setup</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Optional: Windows login via Google</div></div></div>
     </div>
 
+  </div>
+
+  <div class="section-title" style="margin-top:1.5rem;color:var(--gray)">🎓 Agent training — ongoing</div>
+  <p style="font-size:0.72rem;color:var(--muted);margin-bottom:0.75rem">This tracker grows as new tools and features are added. Legend: ⬜ Not started &nbsp;·&nbsp; 🟡 In training &nbsp;·&nbsp; ✅ Certified</p>
+  <div style="background:var(--navy2);border:1px solid #1e3560;border-radius:10px;padding:1.25rem;margin-bottom:1.5rem;overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;font-size:0.72rem;min-width:600px">
+      <thead>
+        <tr style="border-bottom:1px solid #1e3560">
+          <th style="text-align:left;padding:7px 10px;color:var(--gray);font-weight:500;white-space:nowrap">Agent</th>
+          <th style="text-align:left;padding:7px 10px;color:var(--gray);font-weight:500;white-space:nowrap">Branch</th>
+          <th style="text-align:center;padding:7px 10px;color:var(--gray);font-weight:500;white-space:nowrap">HawkSoft</th>
+          <th style="text-align:center;padding:7px 10px;color:var(--gray);font-weight:500;white-space:nowrap">HawkLink</th>
+          <th style="text-align:center;padding:7px 10px;color:var(--gray);font-weight:500;white-space:nowrap">RC Screen Pop</th>
+          <th style="text-align:center;padding:7px 10px;color:var(--gray);font-weight:500;white-space:nowrap">Click-to-dial</th>
+          <th style="text-align:center;padding:7px 10px;color:var(--gray);font-weight:500;white-space:nowrap">TurboRater</th>
+          <th style="text-align:center;padding:7px 10px;color:var(--gray);font-weight:500;white-space:nowrap">AgencyBuzz</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr style="border-bottom:1px solid #0f1f3a"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Sammy Rodriguez</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Moreno Valley</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Laura Figueroa</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Moreno Valley</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Yolanda Hernandez</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Moreno Valley</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Jorge R</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Moreno Valley</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(26,79,160,0.1)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Lana D.</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 01</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(26,79,160,0.1)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Fernando Salgado</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 01</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(26,79,160,0.1)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Jesus Velarde</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 01</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(26,79,160,0.1)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Yasmin Alfaro</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 01</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(212,43,43,0.05)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Alejandra</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 02</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(212,43,43,0.05)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Esmeralda</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 02</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(212,43,43,0.05)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Irene Ayala</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 02</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr ><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Chris Aguilar</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Lake Elsinore</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="section-title a4">Action items</div>
   <table class="actions-table a4">
     <thead><tr><th>Priority</th><th>Action</th><th>Owner</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td class="pri-high">🔴 High</td><td>Complete Yasmin's workstation — Riverside 01</td><td>Saif</td><td>Last workstation remaining</td></tr>
-      <tr><td class="pri-high">🔴 High</td><td>Fix Lake Elsinore screen pop</td><td>Saif</td><td>Chris on leave — follow up on return</td></tr>
-      <tr><td class="pri-high">🔴 High</td><td>Install new phone for Irene — Riverside 02</td><td>Saif</td><td>Activated · hardware missing</td></tr>
-      <tr><td class="pri-high">🔴 High</td><td>Follow up Lana D. RingCentral account</td><td>Saif</td><td>+19514720927 · Ext 111 · Riverside 01</td></tr>
-      <tr><td class="pri-high">🔴 High</td><td>Test HawkLink pre-fill on carrier portals</td><td>Saif</td><td>Drive · Bamboo · CA FAIR PLAN</td></tr>
-      <tr><td class="pri-high">🔴 High</td><td>Collect Phase 4 rebrand credentials</td><td>Saif</td><td>Wix · FB · IG · Google · Twitter · Yelp</td></tr>
-      <tr><td class="pri-med">🟡 Med</td><td>Present rebrand proposal to owner</td><td>Saif</td><td>Agree on design direction first</td></tr>
-      <tr><td class="pri-med">🟡 Med</td><td>Fix Windows Firewall — laptop</td><td>Saif</td><td>Add RingCentral + HawkSoft private permission</td></tr>
-      <tr><td class="pri-med">🟡 Med</td><td>Get CA FAIR PLAN portal credentials</td><td>Saif</td><td>cfpnet.com — Duck Creek system</td></tr>
-    </tbody>
+<tr style="border-bottom:1px solid #0f1f3a"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Sammy Rodriguez</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Moreno Valley</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Laura Figueroa</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Moreno Valley</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Yolanda Hernandez</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Moreno Valley</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Jorge R</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Moreno Valley</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(26,79,160,0.1)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Lana D.</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 01</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(26,79,160,0.1)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Fernando Salgado</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 01</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(26,79,160,0.1)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Jesus Velarde</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 01</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(26,79,160,0.1)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Yasmin Alfaro</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 01</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(212,43,43,0.05)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Alejandra</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 02</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(212,43,43,0.05)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Esmeralda</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 02</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr style="border-bottom:1px solid #0f1f3a;background:rgba(212,43,43,0.05)"><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Irene Ayala</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Riverside 02</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+<tr ><td style="padding:7px 10px;color:var(--light);white-space:nowrap"><strong>Chris Aguilar</strong></td><td style="padding:7px 10px;color:var(--gray);white-space:nowrap">Lake Elsinore</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--success)">✅</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td><td style="text-align:center;padding:7px 10px;font-size:1.1rem;color:var(--muted)">⬜</td></tr>
+      </tbody>
   </table>
 
 </main>
 
 <footer>Speedy Insurance Agency &middot; Project Dashboard &middot; Managed by <a href="https://www.creativelab1.com" target="_blank" style="color:var(--red);text-decoration:none;">Creative Lab 1</a> &middot; Last updated May 26, 2026</footer>
 
+
+<script>
+function getProgressColor(pct) {
+  // 0% = red, 50% = orange/yellow, 100% = green
+  const r1=212, g1=43,  b1=43;   // red   #d42b2b
+  const r2=245, g2=158, b2=11;   // amber #f59e0b  (midpoint)
+  const r3=34,  g3=197, b3=94;   // green #22c55e
+
+  let r, g, b;
+  if (pct <= 50) {
+    const t = pct / 50;
+    r = Math.round(r1 + (r2 - r1) * t);
+    g = Math.round(g1 + (g2 - g1) * t);
+    b = Math.round(b1 + (b2 - b1) * t);
+  } else {
+    const t = (pct - 50) / 50;
+    r = Math.round(r2 + (r3 - r2) * t);
+    g = Math.round(g2 + (g3 - g2) * t);
+    b = Math.round(b2 + (b3 - b2) * t);
+  }
+  return `rgb(${r},${g},${b})`;
+}
+
+function applyProgressColors() {
+  // Update all circle fills and percentage text
+  document.querySelectorAll('.circle-wrap').forEach(wrap => {
+    const pctEl = wrap.querySelector('.circle-pct');
+    const fill = wrap.querySelector('.circle-fill');
+    if (!pctEl || !fill) return;
+
+    const text = pctEl.textContent.trim();
+    const pct = parseInt(text);
+    if (isNaN(pct)) return;
+
+    const color = getProgressColor(pct);
+    fill.style.stroke = color;
+    pctEl.style.color = color;
+
+    // Update card border
+    const card = wrap.closest('.circle-card');
+    if (card && pct > 0) {
+      card.style.borderColor = color.replace('rgb', 'rgba').replace(')', ',0.5)');
+    }
+  });
+
+  // Update progress bars
+  document.querySelectorAll('.progress-fill').forEach(bar => {
+    const width = parseInt(bar.style.width);
+    if (isNaN(width) || width === 0) return;
+    const color = getProgressColor(width);
+    bar.style.background = color;
+  });
+
+  // Update phase card borders based on progress
+  document.querySelectorAll('.phase-card').forEach(card => {
+    const bar = card.querySelector('.progress-fill');
+    if (!bar) return;
+    const width = parseInt(bar.style.width);
+    if (isNaN(width) || width === 0) return;
+    const color = getProgressColor(width);
+    card.style.borderColor = color.replace('rgb', 'rgba').replace(')', ',0.4)');
+  });
+
+  // Update branch bars
+  document.querySelectorAll('.branch-fill').forEach(bar => {
+    const width = parseInt(bar.style.width);
+    if (isNaN(width) || width === 0) return;
+    bar.style.background = getProgressColor(width);
+  });
+
+  // Update branch card borders
+  document.querySelectorAll('.branch-card').forEach(card => {
+    const bar = card.querySelector('.branch-fill');
+    if (!bar) return;
+    const width = parseInt(bar.style.width);
+    if (isNaN(width) || width === 0) return;
+    const color = getProgressColor(width);
+    card.style.borderColor = color.replace('rgb', 'rgba').replace(')', ',0.5)');
+  });
+
+  // Update overall completion metric
+  document.querySelectorAll('.metric-val').forEach(el => {
+    const text = el.textContent.trim();
+    if (text.endsWith('%')) {
+      const pct = parseInt(text);
+      if (!isNaN(pct)) {
+        el.style.color = getProgressColor(pct);
+      }
+    }
+  });
+}
+
+// Run on load
+document.addEventListener('DOMContentLoaded', applyProgressColors);
+window.addEventListener('load', applyProgressColors);
+</script>
 </body>
 </html>
