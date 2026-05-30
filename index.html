@@ -169,7 +169,7 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
   <div class="section-title a1">Project metrics</div>
   <div class="metrics a1">
     <div class="metric-card"><div class="metric-val done">20</div><div class="metric-label">Tasks completed</div></div>
-    <div class="metric-card"><div class="metric-val progress">3</div><div class="metric-label">In progress</div></div>
+    <div class="metric-card"><div class="metric-val progress">4</div><div class="metric-label">In progress</div></div>
     <div class="metric-card"><div style="display:flex;align-items:flex-end;gap:10px"><div><div class="metric-val" style="color:var(--red)">5</div><div class="metric-label">🔴 High</div></div><div><div class="metric-val" style="color:var(--warning)">3</div><div class="metric-label">🟡 Medium</div></div></div><div class="metric-label" style="margin-top:6px">Action items</div></div>
     <div class="metric-card"><div class="metric-val" style="color:var(--blue)">45%</div><div class="metric-label">Overall completion</div></div>
   </div>
@@ -253,9 +253,9 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
       <div class="circle-wrap">
         <svg width="76" height="76" viewBox="0 0 76 76">
           <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill queue-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="201.06"/>
+          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="161"/>
         </svg>
-        <div class="circle-pct">0%</div>
+        <div class="circle-pct">20%</div>
       </div>
       <div class="circle-label">Phase 3</div>
       <div class="circle-sub">Full rebrand</div>
@@ -265,9 +265,9 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
       <div class="circle-wrap">
         <svg width="76" height="76" viewBox="0 0 76 76">
           <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="161"/>
+          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="181"/>
         </svg>
-        <div class="circle-pct">20%</div>
+        <div class="circle-pct">10%</div>
       </div>
       <div class="circle-label">Phase 4</div>
       <div class="circle-sub">Marketing</div>
@@ -397,10 +397,13 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
 
     <div class="phase-card">
       <div class="phase-header">
-        <div><div class="phase-name">📣 Phase 4 · Marketing</div><div class="phase-count">0 of 4 tasks complete</div></div>
-        <span class="phase-badge badge-queued">Queued</span>
+        <div><div class="phase-name">📣 Phase 4 · Marketing</div><div class="phase-count">1 of 4 tasks complete</div></div>
+        <span class="phase-badge badge-active">Active</span>
       </div>
-      <div class="progress-bar"><div class="progress-fill fill-gray" style="width:0%"></div></div>
+      <div class="progress-bar"><div class="progress-fill fill-red" style="width:10%"></div></div>
+      <div class="task"><div class="task-dot dot-done">✓</div><div><div class="task-text">Agent training invites + Calendly booking live</div><div class="task-note">All 12 agents · May 30, 2026 ✅</div></div></div>
+      <div class="task"><div class="task-dot dot-progress">~</div><div><div class="task-text">AgencyBuzz — evaluate + activate</div><div class="task-note">Demo booked · free with TurboRater</div></div></div>
+      <div class="task"><div class="task-dot dot-progress">~</div><div><div class="task-text">Sonant AI — demo booked</div><div class="task-note">Evaluating AI call handling + HawkSoft integration</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Marketing strategy and annual plan</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Client outreach campaigns</div></div></div>
       <div class="task"><div class="task-dot dot-pending">○</div><div><div class="task-text">Referral and retention program</div></div></div>
