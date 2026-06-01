@@ -268,11 +268,13 @@ textarea{resize:vertical;min-height:90px;line-height:1.5}
             <div style="font-size:10px;color:var(--muted);margin-top:3px">Shows Saif exactly what you're seeing</div>
             <div class="ss-btns">
               <button type="button" class="ss-btn" onclick="captureScreen()">📷 Capture screen</button>
+              <button type="button" class="ss-btn" onclick="activatePaste()">📋 Paste (Ctrl+V)</button>
               <div class="file-wrap">
                 <button type="button" class="ss-btn">📁 Upload image</button>
                 <input type="file" accept="image/*" onchange="handleFile(event)" />
               </div>
             </div>
+            <div id="pasteHint" style="display:none;margin-top:8px;font-size:10px;color:var(--low)">✅ Ready — press Ctrl+V now to paste your screenshot</div>
           </div>
           <div id="ssPreview" style="display:none">
             <img id="ssImg" class="ss-preview" alt="Screenshot" />
@@ -360,8 +362,30 @@ async function captureScreen() {
     screenshotData = canvas.toDataURL('image/png');
     showSS(screenshotData);
   } catch(e) {
-    if(e.name !== 'AbortError') alert('Screen capture not available. Please use "Upload image" instead.');
+    if(e.name !== 'AbortError') alert('Screen capture blocked. Try Paste (Ctrl+V) or Upload instead.');
   }
+}
+
+function activatePaste() {
+  document.getElementById('pasteHint').style.display = 'block';
+  document.addEventListener('paste', handlePaste, {once: true});
+}
+
+function handlePaste(e) {
+  const items = e.clipboardData && e.clipboardData.items;
+  if (!items) return;
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].type.indexOf('image') !== -1) {
+      const blob = items[i].getAsFile();
+      const reader = new FileReader();
+      reader.onload = ev => { screenshotData = ev.target.result; showSS(screenshotData); };
+      reader.readAsDataURL(blob);
+      document.getElementById('pasteHint').style.display = 'none';
+      return;
+    }
+  }
+  alert('No image found. Press PrtScn first, then try again.');
+  document.getElementById('pasteHint').style.display = 'none';
 }
 
 function handleFile(e) {
