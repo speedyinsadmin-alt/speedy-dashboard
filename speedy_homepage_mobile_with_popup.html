@@ -1,0 +1,195 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+.phone-wrap{display:flex;justify-content:center;padding:1rem 0}
+.phone{width:320px;border-radius:36px;background:#111;padding:10px;box-shadow:0 24px 48px rgba(0,0,0,0.25)}
+.screen{border-radius:28px;overflow:hidden;background:#f5f4f0;font-family:'Barlow',sans-serif;position:relative}
+.notch{background:#0a1628;height:28px;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+.notch-time{font-size:10px;color:white;font-weight:600}
+.notch-icons{display:flex;gap:4px;align-items:center;font-size:12px;color:white}
+.mob-nav{background:#0a1628;padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+.mob-brand{font-family:'Bebas Neue',sans-serif;font-size:17px;color:white;letter-spacing:2px}
+.mob-nav-right{display:flex;align-items:center;gap:8px}
+.mob-quote-btn{background:#d42b2b;color:white;font-size:9px;font-weight:600;padding:5px 10px;border-radius:3px;letter-spacing:1px;text-transform:uppercase}
+.mob-hero{background:linear-gradient(160deg,#0a1628 0%,#1a2d50 100%);padding:20px 16px 18px}
+.mob-eyebrow{font-size:9px;color:#d42b2b;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.mob-title{font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;letter-spacing:2px;margin-bottom:6px}
+.mob-title span{color:#d42b2b}
+.mob-sub{font-size:11px;color:rgba(255,255,255,0.6);line-height:1.5;margin-bottom:14px}
+.mob-btns{display:flex;gap:8px}
+.mob-btn-p{background:#d42b2b;color:white;font-size:10px;font-weight:600;padding:9px 14px;border-radius:4px;border:none;letter-spacing:1px;text-transform:uppercase;flex:1;text-align:center}
+.mob-btn-s{background:transparent;color:white;font-size:10px;font-weight:500;padding:9px 14px;border-radius:4px;border:1px solid rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;flex:1;text-align:center}
+.mob-stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.1)}
+.mob-stat{text-align:center}
+.mob-stat-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:white;display:block}
+.mob-stat-label{font-size:8px;color:rgba(255,255,255,0.45);letter-spacing:1px;text-transform:uppercase}
+.mob-trust{background:#d42b2b;padding:8px 16px;display:flex;gap:12px;overflow-x:auto;scrollbar-width:none}
+.mob-trust-item{font-size:9px;color:white;font-weight:600;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+.mob-quote{background:#0a1628;padding:16px}
+.mob-q-title{font-family:'Bebas Neue',sans-serif;font-size:22px;color:white;letter-spacing:2px;margin-bottom:3px}
+.mob-q-sub{font-size:10px;color:rgba(255,255,255,0.45);margin-bottom:12px}
+.mob-input{background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.15);border-radius:4px;padding:9px 12px;font-size:11px;color:white;width:100%;margin-bottom:8px}
+.mob-input::placeholder{color:rgba(255,255,255,0.35);font-size:11px}
+.mob-input-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.mob-submit{background:#d42b2b;color:white;font-size:11px;font-weight:600;padding:12px;border-radius:4px;border:none;width:100%;letter-spacing:1px;text-transform:uppercase}
+.mob-services{background:white;padding:16px}
+.mob-sec-label{font-size:9px;color:#d42b2b;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.mob-sec-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;color:#0a1628;font-weight:700;margin-bottom:12px;line-height:1.1}
+.mob-services-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mob-svc{background:#f8f8f8;border-radius:8px;padding:12px;border:0.5px solid #eee}
+.mob-svc-icon{width:28px;height:28px;background:#fff0f0;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:7px;font-size:14px;color:#d42b2b}
+.mob-svc-name{font-size:11px;font-weight:600;color:#0a1628;margin-bottom:2px}
+.mob-svc-desc{font-size:9px;color:#999;line-height:1.4}
+.mob-reviews{background:#f5f4f0;padding:16px}
+.mob-review{background:white;border-radius:8px;padding:12px;border:0.5px solid #e0ddd8;margin-bottom:8px}
+.mob-stars{color:#f59e0b;font-size:11px;margin-bottom:5px}
+.mob-review-text{font-size:10px;color:#555;line-height:1.5;margin-bottom:6px}
+.mob-reviewer{font-size:9px;font-weight:600;color:#0a1628}
+.mob-cta{background:#d42b2b;padding:16px;display:flex;flex-direction:column;gap:8px}
+.mob-cta-title{font-family:'Bebas Neue',sans-serif;font-size:20px;color:white;letter-spacing:2px}
+.mob-cta-sub{font-size:10px;color:rgba(255,255,255,0.7)}
+.mob-cta-btn{background:white;color:#d42b2b;font-size:11px;font-weight:700;padding:10px;border-radius:4px;border:none;text-align:center;letter-spacing:1px;text-transform:uppercase}
+.mob-locs{background:#0a1628;padding:16px}
+.mob-loc-title{font-family:'Bebas Neue',sans-serif;font-size:22px;color:white;letter-spacing:2px;margin-bottom:12px}
+.mob-loc{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
+.mob-loc:last-child{margin-bottom:0}
+.mob-loc-name{font-size:12px;font-weight:600;color:white}
+.mob-loc-addr{font-size:9px;color:rgba(255,255,255,0.45);margin-top:2px}
+.mob-loc-phone{font-size:11px;color:#d42b2b;font-weight:600}
+.mob-call-icon{width:30px;height:30px;background:rgba(212,43,43,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#d42b2b}
+.mob-bottom-nav{background:#0a1628;display:flex;border-top:0.5px solid rgba(255,255,255,0.1)}
+.mob-nav-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 4px;gap:3px;font-size:18px;color:rgba(255,255,255,0.4)}
+.mob-nav-item.active{color:#d42b2b}
+.mob-nav-item span{font-size:8px;letter-spacing:0.5px;text-transform:uppercase;color:inherit}
+.mob-agent-bubble{position:absolute;bottom:52px;right:12px;z-index:100}
+.mob-bubble-btn{width:48px;height:48px;border-radius:50%;background:#d42b2b;border:2.5px solid white;box-shadow:0 4px 12px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative}
+.mob-bubble-label{background:#0a1628;color:white;font-size:9px;font-weight:600;padding:3px 8px;border-radius:12px;white-space:nowrap;position:absolute;bottom:52px;right:0;border:0.5px solid rgba(255,255,255,0.1)}
+.mob-online{width:11px;height:11px;background:#22c55e;border-radius:50%;border:2px solid white;position:absolute;bottom:0;right:0}
+.mob-popup{position:absolute;bottom:108px;right:10px;width:250px;background:white;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.2);z-index:200;overflow:hidden;display:none}
+.mob-popup.open{display:block}
+.mob-popup-header{background:#0a1628;padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
+.mob-popup-title{font-size:11px;font-weight:600;color:white;letter-spacing:1px;text-transform:uppercase}
+.mob-popup-sub{font-size:9px;color:rgba(255,255,255,0.45);margin-top:1px}
+.mob-popup-close{color:white;font-size:14px;cursor:pointer;background:none;border:none}
+.mob-agents{padding:8px}
+.mob-agent-row{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:6px;cursor:pointer;margin-bottom:4px;border:0.5px solid transparent}
+.mob-agent-row:hover{background:#fff5f5;border-color:#f0d0d0}
+.mob-av{width:32px;height:32px;border-radius:50%;background:#e8edf5;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#1a4fa0;flex-shrink:0}
+.mob-ai{flex:1}
+.mob-an{font-size:11px;font-weight:600;color:#0a1628}
+.mob-ar{font-size:9px;color:#888}
+.mob-as{display:flex;align-items:center;gap:3px;font-size:9px;color:#22c55e;font-weight:500;margin-top:1px}
+.mob-sd{width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0}
+.mob-call{background:#d42b2b;color:white;border:none;border-radius:5px;padding:5px 8px;font-size:10px;font-weight:600;cursor:pointer}
+.mob-popup-footer{background:#f8f7f5;padding:8px 12px;border-top:0.5px solid #eee;display:flex;justify-content:space-between;align-items:center}
+.mob-footer-note{font-size:9px;color:#888}
+.mob-footer-num{font-size:11px;font-weight:600;color:#d42b2b}
+</style>
+
+<div class="phone-wrap">
+<div class="phone">
+<div class="screen">
+  <div class="notch">
+    <span class="notch-time">9:41</span>
+    <div class="notch-icons"><i class="ti ti-wifi" aria-hidden="true"></i> <i class="ti ti-battery-2" aria-hidden="true"></i></div>
+  </div>
+
+  <div class="mob-nav">
+    <span class="mob-brand">Speedy Insurance</span>
+    <div class="mob-nav-right">
+      <span class="mob-quote-btn">Quote</span>
+      <i class="ti ti-menu-2" style="font-size:18px;color:white" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="mob-hero">
+    <div class="mob-eyebrow">Southern California · Since 2005</div>
+    <div class="mob-title">Insurance<br><span>You Can</span><br>Count On</div>
+    <div class="mob-sub">Fast quotes · Honest prices · 4 locations across the Inland Empire</div>
+    <div class="mob-btns"><div class="mob-btn-p">Free quote</div><div class="mob-btn-s">Call now</div></div>
+    <div class="mob-stats">
+      <div class="mob-stat"><span class="mob-stat-num">4</span><span class="mob-stat-label">Locations</span></div>
+      <div class="mob-stat"><span class="mob-stat-num">12</span><span class="mob-stat-label">Agents</span></div>
+      <div class="mob-stat"><span class="mob-stat-num">20+</span><span class="mob-stat-label">Carriers</span></div>
+      <div class="mob-stat"><span class="mob-stat-num">5<i class="ti ti-star" style="font-size:12px;color:#f59e0b" aria-hidden="true"></i></span><span class="mob-stat-label">Rating</span></div>
+    </div>
+  </div>
+
+  <div class="mob-trust">
+    <span class="mob-trust-item">Auto</span><span class="mob-trust-item">Home</span><span class="mob-trust-item">SR-22</span><span class="mob-trust-item">Commercial</span><span class="mob-trust-item">DMV</span><span class="mob-trust-item">Espanol</span>
+  </div>
+
+  <div class="mob-quote">
+    <div class="mob-q-title">Free quote in 60 seconds</div>
+    <div class="mob-q-sub">No obligation · Powered by TurboRater</div>
+    <div class="mob-input-row"><input class="mob-input" style="margin:0" placeholder="First name" /><input class="mob-input" style="margin:0" placeholder="Last name" /></div>
+    <input class="mob-input" placeholder="Phone number" />
+    <input class="mob-input" placeholder="ZIP code" />
+    <input class="mob-input" placeholder="Insurance type" />
+    <button class="mob-submit">Get my free quote <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+  </div>
+
+  <div class="mob-services">
+    <div class="mob-sec-label">What we cover</div>
+    <div class="mob-sec-title">Insurance for every<br>stage of life</div>
+    <div class="mob-services-grid">
+      <div class="mob-svc"><div class="mob-svc-icon"><i class="ti ti-car" aria-hidden="true"></i></div><div class="mob-svc-name">Auto insurance</div><div class="mob-svc-desc">Liability, SR-22, full coverage</div></div>
+      <div class="mob-svc"><div class="mob-svc-icon"><i class="ti ti-home" aria-hidden="true"></i></div><div class="mob-svc-name">Home insurance</div><div class="mob-svc-desc">Homeowners, renters, CA FAIR</div></div>
+      <div class="mob-svc"><div class="mob-svc-icon"><i class="ti ti-building" aria-hidden="true"></i></div><div class="mob-svc-name">Commercial</div><div class="mob-svc-desc">Business, bonds, liability</div></div>
+      <div class="mob-svc"><div class="mob-svc-icon"><i class="ti ti-license" aria-hidden="true"></i></div><div class="mob-svc-name">DMV services</div><div class="mob-svc-desc">Registration, tags, transfers</div></div>
+    </div>
+  </div>
+
+  <div class="mob-reviews">
+    <div class="mob-sec-label">Reviews</div>
+    <div class="mob-sec-title" style="margin-bottom:10px">What clients say</div>
+    <div class="mob-review"><div class="mob-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div><div class="mob-review-text">"Best rates I found after calling 5 other agencies. Got me covered same day!"</div><div class="mob-reviewer">Maria G. — Moreno Valley</div></div>
+    <div class="mob-review" style="margin:0"><div class="mob-stars"><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i><i class="ti ti-star" aria-hidden="true"></i></div><div class="mob-review-text">"Hable con Fernando y me ayudo mucho. Los recomiendo al 100%."</div><div class="mob-reviewer">Carlos R. — Riverside</div></div>
+  </div>
+
+  <div class="mob-cta">
+    <div><div class="mob-cta-title">Don't wait — get covered today</div><div class="mob-cta-sub">4 branches ready to help you now</div></div>
+    <div class="mob-cta-btn">Call (951) 695-1500</div>
+  </div>
+
+  <div class="mob-locs">
+    <div class="mob-loc-title">Our 4 locations</div>
+    <div class="mob-loc"><div><div class="mob-loc-name">Moreno Valley</div><div class="mob-loc-addr">Main branch · 4 agents</div><div class="mob-loc-phone">(951) 695-1500</div></div><div class="mob-call-icon"><i class="ti ti-phone" aria-hidden="true"></i></div></div>
+    <div class="mob-loc"><div><div class="mob-loc-name">Riverside 01</div><div class="mob-loc-addr">4 agents</div><div class="mob-loc-phone">(951) 370-2111</div></div><div class="mob-call-icon"><i class="ti ti-phone" aria-hidden="true"></i></div></div>
+    <div class="mob-loc"><div><div class="mob-loc-name">Riverside 02</div><div class="mob-loc-addr">3 agents</div><div class="mob-loc-phone">(951) 472-0927</div></div><div class="mob-call-icon"><i class="ti ti-phone" aria-hidden="true"></i></div></div>
+    <div class="mob-loc"><div><div class="mob-loc-name">Lake Elsinore</div><div class="mob-loc-addr">1 agent</div><div class="mob-loc-phone">(626) 434-0367</div></div><div class="mob-call-icon"><i class="ti ti-phone" aria-hidden="true"></i></div></div>
+  </div>
+
+  <div class="mob-popup" id="mobPopup">
+    <div class="mob-popup-header">
+      <div><div class="mob-popup-title">Talk to an agent</div><div class="mob-popup-sub">Available now</div></div>
+      <button class="mob-popup-close" onclick="document.getElementById('mobPopup').classList.remove('open')"><i class="ti ti-x" aria-hidden="true"></i></button>
+    </div>
+    <div class="mob-agents">
+      <div class="mob-agent-row"><div class="mob-av">SR</div><div class="mob-ai"><div class="mob-an">Sammy Rodriguez</div><div class="mob-ar">Moreno Valley · Manager</div><div class="mob-as"><div class="mob-sd"></div>Available</div></div><button class="mob-call"><i class="ti ti-phone" aria-hidden="true"></i></button></div>
+      <div class="mob-agent-row"><div class="mob-av" style="background:#fff0f0;color:#d42b2b">FS</div><div class="mob-ai"><div class="mob-an">Fernando Salgado</div><div class="mob-ar">Riverside 01 · Sales</div><div class="mob-as"><div class="mob-sd"></div>Available</div></div><button class="mob-call"><i class="ti ti-phone" aria-hidden="true"></i></button></div>
+      <div class="mob-agent-row"><div class="mob-av">AS</div><div class="mob-ai"><div class="mob-an">Alejandra Salas</div><div class="mob-ar">Riverside 02 · Manager</div><div class="mob-as"><div class="mob-sd"></div>Available</div></div><button class="mob-call"><i class="ti ti-phone" aria-hidden="true"></i></button></div>
+      <div class="mob-agent-row"><div class="mob-av" style="background:#e8f0ff;color:#1a4fa0">CA</div><div class="mob-ai"><div class="mob-an">Chris Aguilar</div><div class="mob-ar">Lake Elsinore · Manager</div><div class="mob-as"><div class="mob-sd" style="background:#f59e0b"></div><span style="color:#f59e0b">On a call</span></div></div><button class="mob-call" style="background:#ccc"><i class="ti ti-phone" aria-hidden="true"></i></button></div>
+    </div>
+    <div class="mob-popup-footer"><span class="mob-footer-note">Main line</span><span class="mob-footer-num">(951) 695-1500</span></div>
+  </div>
+
+  <div class="mob-agent-bubble">
+    <div class="mob-bubble-label">Talk to an agent</div>
+    <div class="mob-bubble-btn" onclick="document.getElementById('mobPopup').classList.toggle('open')">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:white;letter-spacing:1px">SI</span>
+      <div class="mob-online"></div>
+    </div>
+  </div>
+
+  <div class="mob-bottom-nav">
+    <div class="mob-nav-item active"><i class="ti ti-home" aria-hidden="true"></i><span>Home</span></div>
+    <div class="mob-nav-item"><i class="ti ti-file-text" aria-hidden="true"></i><span>Quote</span></div>
+    <div class="mob-nav-item"><i class="ti ti-map-pin" aria-hidden="true"></i><span>Locations</span></div>
+    <div class="mob-nav-item"><i class="ti ti-phone" aria-hidden="true"></i><span>Call</span></div>
+    <div class="mob-nav-item"><i class="ti ti-menu-2" aria-hidden="true"></i><span>More</span></div>
+  </div>
+</div>
+</div>
+</div>
