@@ -438,23 +438,23 @@ async function submitTicket(e) {
   const time   = new Date().toLocaleString('en-US',{timeZone:'America/Los_Angeles',dateStyle:'full',timeStyle:'short'});
 
   try {
-    // Upload screenshot to ImgBB first if one was captured
-    let screenshotUrl = null;
+    // Resize screenshot to max 800px wide and compress to keep payload small
+    let screenshotPayload = '❌ No screenshot provided';
     if (screenshotData) {
       try {
-        const imgbbForm = new FormData();
-        imgbbForm.append('key', '5be9d0db6a01d8e8dd63a2dda1d4671b');
-        imgbbForm.append('image', screenshotData.split(',')[1]); // strip the data:image/png;base64, prefix
-        const imgbbRes = await fetch('https://api.imgbb.com/1/upload', {
-          method: 'POST',
-          body: imgbbForm
-        });
-        const imgbbData = await imgbbRes.json();
-        if (imgbbData.success) {
-          screenshotUrl = imgbbData.data.url;
-        }
+        const img = new Image();
+        await new Promise((res, rej) => { img.onload = res; img.onerror = rej; img.src = screenshotData; });
+        const maxW = 800;
+        const scale = img.width > maxW ? maxW / img.width : 1;
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.round(img.width * scale);
+        canvas.height = Math.round(img.height * scale);
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+        const compressed = canvas.toDataURL('image/jpeg', 0.6);
+        screenshotPayload = compressed; // send the actual base64 image
       } catch(e) {
-        console.warn('Screenshot upload failed, continuing without it:', e);
+        console.warn('Screenshot resize failed:', e);
+        screenshotPayload = '⚠️ Screenshot captured but could not be processed';
       }
     }
 
@@ -474,9 +474,7 @@ async function submitTicket(e) {
         category: cat,
         issue_title: title,
         description: desc,
-        screenshot: screenshotUrl
-          ? `✅ Screenshot attached — view here: ${screenshotUrl}`
-          : '❌ No screenshot provided',
+        screenshot: screenshotPayload,
         _reply_to: email,
       })
     });
