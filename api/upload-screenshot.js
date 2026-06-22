@@ -1,3 +1,5 @@
+export const config = { runtime: 'nodejs20.x' };
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -11,44 +13,33 @@ export default async function handler(req, res) {
 
     const FOLDER_ID = '1ukSTDkYP2AwfeWseFfUSkpEMExWro_CC';
     const SA_EMAIL = 'speedy-tickets-bot@speedy-tickets.iam.gserviceaccount.com';
-    const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n');
+    const RAW_KEY = process.env.GOOGLE_PRIVATE_KEY;
 
-    // Build JWT for Google OAuth
+    if (!RAW_KEY) return res.status(500).json({ error: 'GOOGLE_PRIVATE_KEY not set' });
+
+    const PRIVATE_KEY = RAW_KEY.replace(/\\n/g, '\n');
+
+    // Build JWT header + payload
     const now = Math.floor(Date.now() / 1000);
-    const header = { alg: 'RS256', typ: 'JWT' };
-    const payload = {
+    const jwtHeader = Buffer.from(JSON.stringify({ alg: 'RS256', typ: 'JWT' })).toString('base64url');
+    const jwtPayload = Buffer.from(JSON.stringify({
       iss: SA_EMAIL,
       scope: 'https://www.googleapis.com/auth/drive.file',
       aud: 'https://oauth2.googleapis.com/token',
       exp: now + 3600,
       iat: now
-    };
+    })).toString('base64url');
 
-    const b64 = obj => Buffer.from(JSON.stringify(obj)).toString('base64url');
-    const sigInput = `${b64(header)}.${b64(payload)}`;
+    const signingInput = `${jwtHeader}.${jwtPayload}`;
 
-    // Sign with RS256 using Web Crypto
-    const keyData = PRIVATE_KEY
-      .replace('-----BEGIN PRIVATE KEY-----', '')
-      .replace('-----END PRIVATE KEY-----', '')
-      .replace(/\s/g, '');
-    const keyBuffer = Buffer.from(keyData, 'base64');
+    // Sign using Node.js crypto
+    const { createSign } = await import('crypto');
+    const sign = createSign('RSA-SHA256');
+    sign.update(signingInput);
+    const signature = sign.sign(PRIVATE_KEY, 'base64url');
+    const jwt = `${signingInput}.${signature}`;
 
-    const cryptoKey = await crypto.subtle.importKey(
-      'pkcs8', keyBuffer,
-      { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' },
-      false, ['sign']
-    );
-
-    const signature = await crypto.subtle.sign(
-      'RSASSA-PKCS1-v1_5',
-      cryptoKey,
-      Buffer.from(sigInput)
-    );
-
-    const jwt = `${sigInput}.${Buffer.from(signature).toString('base64url')}`;
-
-    // Get access token
+    // Exchange JWT for access token
     const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -62,60 +53,59 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Auth failed', detail: tokenData });
     }
 
-    // Strip data URI prefix
+    // Prepare image data
     const base64Data = image.includes(',') ? image.split(',')[1] : image;
     const mimeMatch = image.match(/data:([^;]+);/);
     const mimeType = mimeMatch ? mimeMatch[1] : 'image/png';
-    const ext = mimeType.split('/')[1] || 'png';
+    const ext = mimeType.includes('jpeg') || mimeType.includes('jpg') ? 'jpg' : 'png';
     const fname = filename || `ticket-${Date.now()}.${ext}`;
 
-    // Upload to Google Drive (multipart)
-    const boundary = '-------speedy_boundary';
+    // Upload via multipart to Google Drive
+    const boundary = 'speedy_upload_boundary';
     const metadata = JSON.stringify({ name: fname, parents: [FOLDER_ID] });
-    const fileBuffer = Buffer.from(base64Data, 'base64');
+    const fileBytes = Buffer.from(base64Data, 'base64');
 
     const body = Buffer.concat([
-      Buffer.from(`--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${metadata}\r\n`),
-      Buffer.from(`--${boundary}\r\nContent-Type: ${mimeType}\r\nContent-Transfer-Encoding: base64\r\n\r\n`),
-      Buffer.from(base64Data),
+      Buffer.from(`--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${metadata}\r\n--${boundary}\r\nContent-Type: ${mimeType}\r\n\r\n`),
+      fileBytes,
       Buffer.from(`\r\n--${boundary}--`)
     ]);
 
     const uploadRes = await fetch(
-      'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,name,webViewLink',
+      'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,name',
       {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${tokenData.access_token}`,
           'Content-Type': `multipart/related; boundary=${boundary}`,
-          'Content-Length': body.length
+          'Content-Length': String(body.length)
         },
         body
       }
     );
 
     const uploadData = await uploadRes.json();
-
-    if (uploadData.id) {
-      // Make file publicly readable so link works for Saif
-      await fetch(`https://www.googleapis.com/drive/v3/files/${uploadData.id}/permissions`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${tokenData.access_token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ role: 'reader', type: 'anyone' })
-      });
-
-      return res.status(200).json({
-        url: `https://drive.google.com/file/d/${uploadData.id}/view`,
-        name: uploadData.name
-      });
-    } else {
-      return res.status(500).json({ error: 'Upload failed', detail: uploadData });
+    if (!uploadData.id) {
+      return res.status(500).json({ error: 'Drive upload failed', detail: uploadData });
     }
 
+    // Make file publicly viewable
+    await fetch(`https://www.googleapis.com/drive/v3/files/${uploadData.id}/permissions`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${tokenData.access_token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ role: 'reader', type: 'anyone' })
+    });
+
+    return res.status(200).json({
+      url: `https://drive.google.com/file/d/${uploadData.id}/view`,
+      name: uploadData.name
+    });
+
   } catch (err) {
-    return res.status(500).json({ error: err.message, stack: err.stack });
+    console.error('Upload error:', err.message, err.stack);
+    return res.status(500).json({ error: err.message });
   }
 }
