@@ -438,6 +438,26 @@ async function submitTicket(e) {
   const time   = new Date().toLocaleString('en-US',{timeZone:'America/Los_Angeles',dateStyle:'full',timeStyle:'short'});
 
   try {
+    // Upload screenshot to ImgBB first if one was captured
+    let screenshotUrl = null;
+    if (screenshotData) {
+      try {
+        const imgbbForm = new FormData();
+        imgbbForm.append('key', '5be9d0db6a01d8e8dd63a2dda1d4671b');
+        imgbbForm.append('image', screenshotData.split(',')[1]); // strip the data:image/png;base64, prefix
+        const imgbbRes = await fetch('https://api.imgbb.com/1/upload', {
+          method: 'POST',
+          body: imgbbForm
+        });
+        const imgbbData = await imgbbRes.json();
+        if (imgbbData.success) {
+          screenshotUrl = imgbbData.data.url;
+        }
+      } catch(e) {
+        console.warn('Screenshot upload failed, continuing without it:', e);
+      }
+    }
+
     const response = await fetch('https://formspree.io/f/xjgzqdln', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -454,7 +474,9 @@ async function submitTicket(e) {
         category: cat,
         issue_title: title,
         description: desc,
-        screenshot: screenshotData ? '✅ Screenshot captured (see below)' : '❌ No screenshot provided',
+        screenshot: screenshotUrl
+          ? `✅ Screenshot attached — view here: ${screenshotUrl}`
+          : '❌ No screenshot provided',
         _reply_to: email,
       })
     });
