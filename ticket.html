@@ -261,21 +261,31 @@ textarea{resize:vertical;min-height:90px;line-height:1.5}
       <!-- SCREENSHOT -->
       <div class="card">
         <div class="card-title">Screenshot <span style="font-size:9px;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400;margin-left:4px">— optional but helpful</span></div>
-        <div style="background:rgba(255,255,255,0.04);border:1.5px dashed var(--border);border-radius:8px;padding:18px 16px;">
-          <div style="font-size:22px;margin-bottom:8px;text-align:center">📸</div>
-          <div style="font-size:12px;font-weight:600;color:var(--light);text-align:center;margin-bottom:6px">Upload your screenshot to the Speedy IT Tickets folder</div>
-          <div style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:14px;line-height:1.6">Take a screenshot → open the link below → drag and drop your image → copy the file name and paste it in the field below</div>
-          <div style="text-align:center;margin-bottom:14px">
-            <a href="https://drive.google.com/drive/folders/1ukSTDkYP2AwfeWseFfUSkpEMExWro_CC" target="_blank"
-              style="display:inline-block;background:#c0392b;color:#fff;font-size:12px;font-weight:700;padding:9px 20px;border-radius:7px;text-decoration:none;">
-              📂 Open Speedy IT Tickets Folder →
-            </a>
+        <div class="ss-zone" id="ssZone">
+          <div id="ssEmpty">
+            <div style="font-size:24px;margin-bottom:6px">📸</div>
+            <div style="font-size:12px;font-weight:600;color:var(--light)">Capture or attach a screenshot</div>
+            <div style="font-size:10px;color:var(--muted);margin-top:3px">Uploads automatically to Google Drive — no extra steps</div>
+            <div class="ss-btns">
+              <button type="button" class="ss-btn" onclick="captureScreen()">📷 Capture screen</button>
+              <button type="button" class="ss-btn" onclick="activatePaste()">📋 Paste (Ctrl+V)</button>
+              <div class="file-wrap">
+                <button type="button" class="ss-btn">📁 Upload image</button>
+                <input type="file" accept="image/*" onchange="handleFile(event)" />
+              </div>
+            </div>
+            <div id="pasteHint" style="display:none;margin-top:8px;font-size:10px;color:var(--low)">✅ Ready — press Ctrl+V now to paste your screenshot</div>
           </div>
-          <input type="text" id="screenshotName" placeholder="File name or note (e.g. sammy-hawklink-error.png)" autocomplete="off"
-            style="width:100%;padding:10px 12px;background:var(--card);border:1.5px solid var(--border);border-radius:7px;color:var(--text);font-size:13px;font-family:inherit;outline:none;"/>
+          <div id="ssPreview" style="display:none">
+            <img id="ssImg" class="ss-preview" alt="Screenshot" />
+            <div id="ssStatus" style="font-size:11px;color:var(--low);margin-top:6px;text-align:center"></div>
+            <div class="ss-btns">
+              <button type="button" class="ss-btn" onclick="captureScreen()">📷 Retake</button>
+              <button type="button" class="ss-btn remove" onclick="clearSS()">✕ Remove</button>
+            </div>
+          </div>
         </div>
       </div>
-
       <!-- SUBMIT -->
       <button type="submit" class="submit-btn" id="submitBtn">
         <span>🎫</span><span>Submit ticket to Saif</span>
@@ -426,11 +436,29 @@ async function submitTicket(e) {
   const time   = new Date().toLocaleString('en-US',{timeZone:'America/Los_Angeles',dateStyle:'full',timeStyle:'short'});
 
   try {
-    // Screenshot — just grab the file name/note the agent typed
-    const screenshotNote = document.getElementById('screenshotName').value.trim();
-    const screenshotPayload = screenshotNote
-      ? `✅ Screenshot uploaded to Speedy IT Tickets folder — file: "${screenshotNote}" → https://drive.google.com/drive/folders/1ukSTDkYP2AwfeWseFfUSkpEMExWro_CC`
-      : '❌ No screenshot provided';
+    // Screenshot — upload to Google Drive via serverless API
+    let screenshotPayload = '❌ No screenshot provided';
+    if (screenshotData) {
+      try {
+        document.getElementById('ssStatus').textContent = '⏳ Uploading screenshot to Drive...';
+        const fname = `${agent.replace(/\s+/g,'-')}-${Date.now()}.jpg`;
+        const uploadRes = await fetch('/api/upload-screenshot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ image: screenshotData, filename: fname })
+        });
+        const uploadData = await uploadRes.json();
+        if (uploadData.url) {
+          screenshotPayload = `✅ Screenshot saved to Drive — view here: ${uploadData.url}`;
+          document.getElementById('ssStatus').textContent = '✅ Uploaded to Google Drive';
+        } else {
+          screenshotPayload = '⚠️ Screenshot captured but upload failed';
+          document.getElementById('ssStatus').textContent = '⚠️ Upload failed';
+        }
+      } catch(e) {
+        screenshotPayload = '⚠️ Screenshot captured but upload failed';
+      }
+    }
 
     const response = await fetch('https://formspree.io/f/xjgzqdln', {
       method: 'POST',
@@ -475,7 +503,12 @@ function resetForm() {
   document.querySelectorAll('.p-btn').forEach(b=>b.className='p-btn');
   document.querySelectorAll('.auto-filled').forEach(el=>el.classList.remove('auto-filled'));
   ['branchAutoLabel','emailAutoLabel','extAutoLabel'].forEach(id=>document.getElementById(id).textContent='');
-  document.getElementById('screenshotName').value = '';
+  screenshotData = null;
+  document.getElementById('ssImg').src = '';
+  document.getElementById('ssPreview').style.display = 'none';
+  document.getElementById('ssEmpty').style.display = 'block';
+  document.getElementById('ssZone').classList.remove('has-img');
+  if(document.getElementById('ssStatus')) document.getElementById('ssStatus').textContent = '';
   document.getElementById('formWrap').style.display = 'block';
   document.getElementById('successScreen').style.display = 'none';
   document.getElementById('submitBtn').disabled = false;
