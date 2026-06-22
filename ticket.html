@@ -438,23 +438,24 @@ async function submitTicket(e) {
   const time   = new Date().toLocaleString('en-US',{timeZone:'America/Los_Angeles',dateStyle:'full',timeStyle:'short'});
 
   try {
-    // Resize screenshot to max 800px wide and compress to keep payload small
+    // Upload screenshot via our server-side API (avoids CORS, returns real URL)
     let screenshotPayload = '❌ No screenshot provided';
     if (screenshotData) {
       try {
-        const img = new Image();
-        await new Promise((res, rej) => { img.onload = res; img.onerror = rej; img.src = screenshotData; });
-        const maxW = 800;
-        const scale = img.width > maxW ? maxW / img.width : 1;
-        const canvas = document.createElement('canvas');
-        canvas.width = Math.round(img.width * scale);
-        canvas.height = Math.round(img.height * scale);
-        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-        const compressed = canvas.toDataURL('image/jpeg', 0.6);
-        screenshotPayload = compressed; // send the actual base64 image
+        const uploadRes = await fetch('/api/upload-screenshot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ image: screenshotData })
+        });
+        const uploadData = await uploadRes.json();
+        if (uploadData.url) {
+          screenshotPayload = `✅ Screenshot: ${uploadData.url}`;
+        } else {
+          screenshotPayload = '⚠️ Screenshot captured but upload failed — ask agent to resend';
+        }
       } catch(e) {
-        console.warn('Screenshot resize failed:', e);
-        screenshotPayload = '⚠️ Screenshot captured but could not be processed';
+        console.warn('Screenshot upload error:', e);
+        screenshotPayload = '⚠️ Screenshot captured but upload failed — ask agent to resend';
       }
     }
 
