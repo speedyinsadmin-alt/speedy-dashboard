@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speedy Insurance — GBP Dashboard</title>
+<style>
+:root{ color-scheme: light; --navy:#0d2642; --red:#e2231a; --yellow:#f4b400; --ink:#1c2733; --muted:#5b6b7d; --line:#e6eaf0; --bg:#f5f7fa; --card:#ffffff; --green:#1a8754; --amber:#b8860b; }
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 22px 60px}
+header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;border-bottom:3px solid var(--navy);padding-bottom:16px;margin-bottom:24px}
+h1{margin:0;font-size:25px;color:var(--navy);letter-spacing:-.3px}
+h1 span{color:var(--red)}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.updated{font-size:12px;color:var(--muted);text-align:right}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px;box-shadow:0 1px 2px rgba(13,38,66,.04)}
+.kpi .n{font-size:28px;font-weight:800;color:var(--navy);line-height:1}
+.kpi .l{font-size:12px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.4px}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.6px;color:var(--navy);margin:30px 0 12px;border-left:4px solid var(--red);padding-left:10px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.branch{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 1px 2px rgba(13,38,66,.04)}
+.branch .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.bn{font-weight:700;font-size:16px;color:var(--navy)}
+.addr{font-size:12px;color:var(--muted);margin-top:2px}
+.rating{text-align:right;white-space:nowrap}
+.rating .star{color:var(--yellow);font-size:16px;font-weight:800}
+.rating .rev{font-size:11px;color:var(--muted)}
+.rowline{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pill{font-size:11px;font-weight:600;padding:4px 9px;border-radius:20px;border:1px solid var(--line)}
+.ok{background:#e7f6ee;color:var(--green);border-color:#cdeede}
+.warnp{background:#fdf3e1;color:var(--amber);border-color:#f6e4c0}
+.flat{background:#eef2f7;color:#43536a}
+.note{font-size:12px;color:var(--muted);margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+.postlink{display:inline-block;margin-top:11px;font-size:12px;font-weight:700;color:#15467a;text-decoration:none;background:#eef3fb;border:1px solid #d4e0f1;border-radius:7px;padding:6px 11px}
+.postlink:hover{background:#e1ebf8}
+.chartbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 14px}
+.bars{display:flex;align-items:flex-end;justify-content:space-around;gap:20px;padding:6px 6px 0}
+.bcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.bval{font-weight:800;color:var(--navy);font-size:16px;margin-bottom:7px}
+.bar{width:100%;max-width:96px;border-radius:8px 8px 0 0;display:block}
+.blab{margin-top:11px;font-size:12.5px;font-weight:600;color:var(--ink);text-align:center;line-height:1.25}
+.blab small{display:block;color:var(--muted);font-weight:500;font-size:11px;margin-top:2px}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:start}
+.sched{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 4px}
+.sched table{width:100%;border-collapse:collapse;font-size:13px}
+.sched th,.sched td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+.sched th{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+.sched tr:last-child td{border-bottom:none}
+.badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+.b-done{background:#e7f6ee;color:var(--green)}
+.b-next{background:var(--navy);color:#fff}
+.b-up{background:#eef2f7;color:#43536a}
+.todo{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 4px}
+.todo ul{list-style:none;margin:0;padding:0}
+.todo li{display:flex;gap:10px;align-items:flex-start;font-size:13px;padding:9px 14px;border-bottom:1px solid var(--line)}
+.todo li:last-child{border-bottom:none}
+.dot{width:9px;height:9px;border-radius:50%;margin-top:5px;flex:0 0 9px}
+.d-amber{background:var(--amber)} .d-navy{background:var(--navy)} .d-grey{background:#9aa7b5}
+.back-btn{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#15467a;text-decoration:none;background:#eef3fb;border:1px solid #d4e0f1;border-radius:7px;padding:7px 13px;margin-bottom:18px}
+.back-btn:hover{background:#e1ebf8}
+footer{margin-top:34px;font-size:11px;color:var(--muted);text-align:center}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back-btn" href="/">← Back to Main Dashboard</a>
+
+<header>
+<div>
+<h1>SPEEDY <span>INSURANCE</span> — GBP Dashboard</h1>
+<div class="sub">Google Business Profile management · 4 Speedy branches</div>
+</div>
+<div class="updated">Last updated<br><strong>June 25, 2026</strong></div>
+</header>
+
+<div class="kpis">
+<div class="kpi"><div class="n">4</div><div class="l">Branches managed</div></div>
+<div class="kpi"><div class="n">2,184</div><div class="l">Total reviews</div></div>
+<div class="kpi"><div class="n">4.9★</div><div class="l">Avg rating</div></div>
+<div class="kpi"><div class="n">4 / 4</div><div class="l">Posts live this week</div></div>
+</div>
+
+<h2>Branch status</h2>
+<div class="grid">
+  <div class="branch">
+    <div class="top"><div><div class="bn">Riverside — Van Buren</div><div class="addr">2955 Van Buren Blvd Ste A7 · speedyins.com</div></div>
+    <div class="rating"><div class="star">4.9★</div><div class="rev">433 reviews</div></div></div>
+    <div class="rowline"><span class="pill ok">Hours fixed</span><span class="pill ok">Post live</span><span class="pill ok">Pin repositioned</span><span class="pill ok">Service area trimmed</span></div>
+    <div class="note">Was showing "Open 24 hours" — corrected. Map pin & local service area cleaned up.</div>
+    <a class="postlink" href="https://www.google.com/maps/search/?api=1&query=Speedy+Insurance+2955+Van+Buren+Blvd+Ste+A7+Riverside+CA+92503" target="_blank" rel="noopener">↗ View on Google Maps</a>
+  </div>
+  <div class="branch">
+    <div class="top"><div><div class="bn">Riverside — Magnolia</div><div class="addr">7010 Magnolia Ave · speedyins.com</div></div>
+    <div class="rating"><div class="star">4.9★</div><div class="rev">777 reviews</div></div></div>
+    <div class="rowline"><span class="pill ok">Hours fixed</span><span class="pill ok">Post live</span><span class="pill ok">Facebook link fixed</span><span class="pill warnp">30 reviews unanswered</span></div>
+    <div class="note">Replaced bad facebook.com/wix link. Website differs from other branches — standardize later.</div>
+    <a class="postlink" href="https://www.google.com/maps/search/?api=1&query=Speedy+Insurance+Agency+7010+Magnolia+Ave+Riverside+CA+92506" target="_blank" rel="noopener">↗ View on Google Maps</a>
+  </div>
+  <div class="branch">
+    <div class="top"><div><div class="bn">Moreno Valley</div><div class="addr">12625 Frederick St #i-1 · speedyins.com</div></div>
+    <div class="rating"><div class="star">4.8★</div><div class="rev">898 reviews</div></div></div>
+    <div class="rowline"><span class="pill ok">Hours fixed</span><span class="pill ok">Post live</span><span class="pill flat">Open Sundays 10–5</span><span class="pill warnp">Service area broad</span></div>
+    <div class="note">Google had set wrong 9–8 hours; corrected. Most-reviewed branch.</div>
+    <a class="postlink" href="https://www.google.com/maps/search/?api=1&query=Speedy+Insurance+Agency+12625+Frederick+St+Moreno+Valley+CA+92553" target="_blank" rel="noopener">↗ View on Google Maps</a>
+  </div>
+  <div class="branch">
+    <div class="top"><div><div class="bn">Lake Elsinore</div><div class="addr">31948 Mission Trail Ste B · speedyins.com</div></div>
+    <div class="rating"><div class="star">5.0★</div><div class="rev">76 reviews</div></div></div>
+    <div class="rowline"><span class="pill ok">Hours fixed</span><span class="pill ok">Post live</span><span class="pill ok">Website fixed</span><span class="pill warnp">Service area broad</span></div>
+    <div class="note">Website corrected from gsquareins.com → speedyins.com. Newest branch — keep building reviews.</div>
+    <a class="postlink" href="https://www.google.com/maps/search/?api=1&query=Speedy+Insurance+Agency+31948+Mission+Trail+Lake+Elsinore+CA+92530" target="_blank" rel="noopener">↗ View on Google Maps</a>
+  </div>
+</div>
+
+<h2>Reviews by branch</h2>
+<div class="chartbox">
+  <div class="bars">
+    <div class="bcol"><span class="bval">433</span><span class="bar" style="height:96px;background:#0d2642"></span><span class="blab">Van Buren<small>Riverside</small></span></div>
+    <div class="bcol"><span class="bval">777</span><span class="bar" style="height:173px;background:#15467a"></span><span class="blab">Magnolia<small>Riverside</small></span></div>
+    <div class="bcol"><span class="bval">898</span><span class="bar" style="height:200px;background:#e2231a"></span><span class="blab">Moreno Valley</span></div>
+    <div class="bcol"><span class="bval">76</span><span class="bar" style="height:17px;background:#f4b400"></span><span class="blab">Lake Elsinore</span></div>
+  </div>
+</div>
+
+<h2>Weekly post schedule &amp; open items</h2>
+<div class="two">
+  <div class="sched">
+    <table>
+      <thead><tr><th>Week</th><th>Theme</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Jun 25</td><td>Free Quote — all 4 branches</td><td><span class="badge b-done">Published</span></td></tr>
+        <tr><td>Jun 27</td><td>Full Service Lineup</td><td><span class="badge b-next">Next · Fri</span></td></tr>
+        <tr><td>Jul 4</td><td>SR-22 Awareness</td><td><span class="badge b-up">Upcoming</span></td></tr>
+        <tr><td>Jul 11</td><td>DMV Services — skip the line</td><td><span class="badge b-up">Upcoming</span></td></tr>
+        <tr><td>Jul 18</td><td>DUI Insurance — we accept all drivers</td><td><span class="badge b-up">Upcoming</span></td></tr>
+        <tr><td>Jul 25</td><td>Review push — ask happy clients</td><td><span class="badge b-up">Upcoming</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="todo">
+    <ul>
+      <li><span class="dot d-amber"></span><span><strong>Respond to 30 unanswered reviews</strong> — Magnolia branch. High priority for ranking.</span></li>
+      <li><span class="dot d-amber"></span><span><strong>Trim service area</strong> — Moreno Valley &amp; Lake Elsinore profiles showing too broad a coverage area.</span></li>
+      <li><span class="dot d-amber"></span><span><strong>Standardize website URL</strong> — Magnolia still shows cheapinsuranceriverside.com. Update to speedyins.com.</span></li>
+      <li><span class="dot d-navy"></span><span><strong>Upload photos</strong> — all 4 branches need interior &amp; exterior shots. Target: 10+ photos per profile.</span></li>
+      <li><span class="dot d-navy"></span><span><strong>Add services list</strong> — confirm all 8 services listed on each profile (Auto, SR-22, DMV, Home, Commercial, Boat/RV, Bond, GL).</span></li>
+      <li><span class="dot d-navy"></span><span><strong>Build Lake Elsinore reviews</strong> — only 76 reviews. Run a review push campaign for newest branch.</span></li>
+      <li><span class="dot d-grey"></span><span><strong>Q&amp;A section</strong> — seed common questions on all profiles (SR-22 cost, DMV services, walk-ins accepted, Spanish-speaking agents).</span></li>
+      <li><span class="dot d-grey"></span><span><strong>Owner role upgrade</strong> — currently Manager on all profiles. Request Owner from Tony or Lana when needed.</span></li>
+    </ul>
+  </div>
+</div>
+
+<h2>Google Business Profile — Quick Links</h2>
+<div class="grid">
+  <div class="branch" style="display:flex;flex-direction:column;gap:8px">
+    <div class="bn" style="margin-bottom:4px">Review links — send to clients</div>
+    <a class="postlink" href="https://g.page/r/CRndOnckRyDfEBE/review" target="_blank" rel="noopener">⭐ Leave a review — Moreno Valley</a>
+    <a class="postlink" href="https://g.page/r/CYRJKiQNEUAJEBE/review" target="_blank" rel="noopener">⭐ Leave a review — Van Buren</a>
+    <a class="postlink" href="https://g.page/r/Ca8NG2LfuGczEBE/review" target="_blank" rel="noopener">⭐ Leave a review — Magnolia</a>
+    <a class="postlink" href="https://maps.app.goo.gl/TavZvYkmX9LgdvsAA" target="_blank" rel="noopener">⭐ Leave a review — Lake Elsinore</a>
+  </div>
+  <div class="branch" style="display:flex;flex-direction:column;gap:8px">
+    <div class="bn" style="margin-bottom:4px">Manage profiles</div>
+    <a class="postlink" href="https://business.google.com" target="_blank" rel="noopener">🔧 Google Business Profile Manager</a>
+    <a class="postlink" href="https://www.facebook.com/speedyinsuranceagency/" target="_blank" rel="noopener">📘 Speedy Facebook Page</a>
+    <a class="postlink" href="https://www.instagram.com/speedy.insurance/" target="_blank" rel="noopener">📸 Speedy Instagram</a>
+    <a class="postlink" href="https://speedy-website-five.vercel.app" target="_blank" rel="noopener">🌐 Website Preview</a>
+  </div>
+</div>
+
+<footer>Speedy Insurance Agency · GBP Dashboard · Last updated June 25, 2026 · Managed by Creative Lab 1</footer>
+</div>
+</body>
+</html>
