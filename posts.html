@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speedy Insurance — GBP Posts &amp; Review Replies</title>
+<style>
+:root{ color-scheme: light; --navy:#0d2642; --red:#e2231a; --yellow:#f4b400; --ink:#1c2733; --muted:#5b6b7d; --line:#e6eaf0; --bg:#f5f7fa; --card:#ffffff; --green:#1a8754; --amber:#b8860b; }
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 22px 70px}
+header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;border-bottom:3px solid var(--navy);padding-bottom:16px;margin-bottom:22px}
+h1{margin:0;font-size:25px;color:var(--navy);letter-spacing:-.3px}
+h1 span{color:var(--red)}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.updated{font-size:12px;color:var(--muted);text-align:right}
+.updated a{color:#15467a;text-decoration:none;font-weight:600}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.6px;color:var(--navy);margin:30px 0 12px;border-left:4px solid var(--red);padding-left:10px}
+.alert{background:#fdf3e1;border:1px solid #f0dcb4;border-left:4px solid var(--amber);border-radius:10px;padding:13px 16px;font-size:13px;color:#6b5312;margin-bottom:20px}
+.alert b{color:#4a3a0c}
+.hoursbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:22px;font-size:13px;display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.hoursbar .hl{font-weight:700;color:var(--navy);text-transform:uppercase;font-size:11px;letter-spacing:.5px}
+.hoursbar .hv b{color:var(--navy)}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:20px;flex-wrap:wrap}
+.tab{background:none;border:none;font-family:inherit;font-size:13px;font-weight:700;color:var(--muted);padding:10px 16px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
+.tab:hover{color:var(--navy)}
+.tab.on{color:var(--navy);border-bottom-color:var(--red)}
+.pane{display:none}.pane.on{display:block}
+.controls{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.controls label{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:5px}
+select{font-family:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);min-width:230px}
+.ctrlnote{font-size:12px;color:var(--muted);flex:1;min-width:200px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:16px;box-shadow:0 1px 2px rgba(13,38,66,.04);overflow:hidden}
+.post .head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line);background:#fbfcfe;flex-wrap:wrap}
+.post .title{font-weight:700;font-size:14px;color:var(--navy)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.pill{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;border:1px solid var(--line);background:#eef2f7;color:#43536a;text-transform:uppercase;letter-spacing:.3px}
+.pill.en{background:#eef3fb;color:#15467a;border-color:#d4e0f1}
+.pill.es{background:#fdf0ef;color:#a3201a;border-color:#f3d3d1}
+.pill.mv{background:#e7f6ee;color:var(--green);border-color:#cdeede}
+.pill.warn{background:#fdf3e1;color:var(--amber);border-color:#f6e4c0}
+.split{display:grid;grid-template-columns:1fr 340px;gap:0}
+.post .body{padding:15px 16px;font-size:14px;white-space:pre-wrap;line-height:1.55}
+.gfx{border-left:1px solid var(--line);padding:14px;background:#fbfcfe;display:flex;flex-direction:column;gap:9px}
+.gfx img{width:100%;border-radius:8px;border:1px solid var(--line);display:block;background:#0b1829}
+.gfx a{font-size:11.5px;font-weight:700;color:#15467a;text-decoration:none;text-align:center;background:#eef3fb;border:1px solid #d4e0f1;border-radius:7px;padding:6px}
+.gfx a:hover{background:#e1ebf8}
+.post .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 16px;border-top:1px dashed var(--line);background:#fbfcfe;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.copy{font-family:inherit;font-size:12px;font-weight:700;color:#fff;background:var(--navy);border:none;border-radius:7px;padding:7px 14px;cursor:pointer}
+.copy:hover{background:#123253}.copy.done{background:var(--green)}
+.cta{font-weight:700;color:var(--navy)}
+.count{font-variant-numeric:tabular-nums}
+.info{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:13px}
+.info ol,.info ul{margin:8px 0 0;padding-left:20px}
+.info li{margin-bottom:7px}
+.info table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+.info th,.info td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.info th{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+.info tr:last-child td{border-bottom:none}
+code{background:#eef2f7;padding:2px 6px;border-radius:5px;font-size:12px}
+.foot-note{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);text-align:center}
+@media(max-width:760px){.split{grid-template-columns:1fr}.gfx{border-left:none;border-top:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1>Google Posts &amp; <span>Review Replies</span></h1>
+    <div class="sub">Copy-and-paste library for all 4 Google Business Profiles · English + Español</div>
+  </div>
+  <div class="updated">
+    Last updated: <b>August 7, 2026</b><br>
+    <a href="gbp.html">← GBP Dashboard</a> · <a href="index.html">Main Dashboard</a>
+  </div>
+</header>
+
+<div class="alert">
+  <b>Hours corrected August 2026.</b> The original July 10 playbook claimed “open 7 days a week, 9 AM–8 PM” on every post — not true for any branch. Everything below uses the verified hours. <b>The Sunday post is Moreno Valley only</b> — never publish it on Van Buren, Magnolia or Lake Elsinore.
+</div>
+
+<div class="hoursbar">
+  <div><span class="hl">Verified hours</span></div>
+  <div class="hv"><b>Mon–Fri</b> 9am–7pm</div>
+  <div class="hv"><b>Sat</b> 10am–5pm</div>
+  <div class="hv"><b>Sun</b> Moreno Valley only 10am–5pm · VB / MG / LE closed</div>
+</div>
+
+<div class="tabs">
+  <button class="tab on" data-pane="posts">Google Posts</button>
+  <button class="tab" data-pane="replies">Review Replies</button>
+  <button class="tab" data-pane="how">Cadence &amp; How-To</button>
+</div>
+
+<div class="pane on" id="posts">
+  <div class="controls">
+    <div>
+      <label for="branchSel">Branch profile</label>
+      <select id="branchSel">
+        <option value="mv">Moreno Valley — (951) 472-0927</option>
+        <option value="vb">Riverside Van Buren — (951) 695-1500</option>
+        <option value="mg">Riverside Magnolia — (951) 977-9400</option>
+        <option value="le">Lake Elsinore — (951) 579-4095</option>
+      </select>
+    </div>
+    <div class="ctrlnote">Pick the profile you're posting to — the graphic swaps to that branch and the copy button appends its address and phone. The Sunday post always stays on Moreno Valley.</div>
+  </div>
+  <div id="postList">Loading…</div>
+</div>
+
+<div class="pane" id="replies">
+  <div class="alert" style="background:#eef3fb;border-color:#d4e0f1;border-left-color:#15467a;color:#1c3d63">
+    <b>Ground rules:</b> reply within 48 hours · reply in the language the review was written in · use the reviewer's first name · <b>never confirm policy details, client status, or any PII</b> — even to defend the agency. 1–2 star and suspected-fake reviews get drafted and escalated, never auto-sent.
+  </div>
+  <div id="replyList">Loading…</div>
+</div>
+
+<div class="pane" id="how">
+  <h2 style="margin-top:0">Publishing cadence</h2>
+  <div class="info">
+    One post per profile per week, rotating the themes below — about a month of content per branch, then it restarts.
+    <table>
+      <tr><th>Week</th><th>Theme</th><th>Profiles</th></tr>
+      <tr><td>1</td><td>SR-22 same day</td><td>All 4 (EN). ES as a second post on Moreno Valley + Magnolia.</td></tr>
+      <tr><td>2</td><td>DMV services</td><td>All 4 (EN). ES on MV + Magnolia.</td></tr>
+      <tr><td>3</td><td>Evenings &amp; Saturdays</td><td>VB / MG / LE. <b>Moreno Valley posts the Sunday version instead.</b></td></tr>
+      <tr><td>4</td><td>Free quote CTA</td><td>All 4 (EN). ES on MV + Magnolia.</td></tr>
+    </table>
+  </div>
+
+  <h2>How to publish</h2>
+  <div class="info">
+    <ol>
+      <li>Go to <b>business.google.com</b> → select the branch profile</li>
+      <li><b>Add update</b> → paste the post text</li>
+      <li>Download the graphic from this page and attach it — <b>check the branch name on the graphic matches the profile</b></li>
+      <li>Set the button as noted on each post</li>
+      <li>Link to <b>speedyins.com</b>, or <b>speedyins.com/es.html</b> for Spanish posts</li>
+      <li>Publish</li>
+    </ol>
+  </div>
+
+  <h2>Where this data lives</h2>
+  <div class="info">
+    This page reads from <code>posts.json</code> in the <code>speedy-dashboard</code> repo. The graphics are in <code>img/posts/</code>. The weekly automated task follows <code>POSTS_TASK.md</code> and records what went out in <code>posts_log.json</code>.
+    <br><br>Nothing here lives in a chat or a downloaded file — change <code>posts.json</code> and both this page and the task pick it up.
+  </div>
+
+  <h2>Check before publishing</h2>
+  <div class="info">
+    <ul>
+      <li><b>Verify Moreno Valley's Sunday hours on Google.</b> A July screenshot showed MV listed as “Sunday: Closed.” Fix the listing before the Sunday post runs, or the post contradicts it.</li>
+      <li><b>Photos:</b> Moreno Valley refreshed July 9. Van Buren, Magnolia and Lake Elsinore still pending.</li>
+      <li><b>Post history:</b> only one Google post has ever been published (Free Quote, July 10, 2026).</li>
+    </ul>
+  </div>
+</div>
+
+<div class="foot-note">Speedy Insurance Agency · Internal — admin access only · No client PII in any post or reply</div>
+</div>
+
+<script>
+var DATA = null, BR = "mv";
+
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function imgFor(p, br){
+  if(p.scope === "mv") return p.images.mv;
+  return p.images[br] || p.images.mv;
+}
+
+function renderPosts(){
+  var html = DATA.posts.map(function(p,i){
+    var pills = '<span class="pill '+(p.lang==="ES"?"es":"en")+'">'+p.lang+'</span>';
+    if(p.scope==="mv") pills += '<span class="pill mv">Moreno Valley only</span><span class="pill warn">Verify GBP Sunday hours first</span>';
+    var src = imgFor(p, BR);
+    return '<div class="post"><div class="head"><div><div class="title">'+esc(p.order+" — "+p.title)+'</div>'+
+      '<div class="tags">'+pills+'</div></div>'+
+      '<button class="copy" data-k="post" data-i="'+i+'">Copy text</button></div>'+
+      '<div class="split"><div class="body">'+esc(p.text)+'</div>'+
+      '<div class="gfx"><img src="'+src+'" alt="" loading="lazy"><a href="'+src+'" download>Download graphic ↓</a></div></div>'+
+      '<div class="foot"><div>Button: <span class="cta">'+esc(p.cta)+'</span>'+
+      (p.link ? ' → '+esc(p.link) : '')+' · <span class="count">'+p.text.length+' chars</span> (limit 1,500)</div></div></div>';
+  }).join("");
+  document.getElementById("postList").innerHTML = html;
+}
+
+function renderReplies(){
+  document.getElementById("replyList").innerHTML = DATA.replies.map(function(r,i){
+    return '<div class="post"><div class="head"><div><div class="title">'+esc(r.title)+'</div>'+
+      '<div class="tags"><span class="pill '+(r.lang==="ES"?"es":"en")+'">'+r.lang+'</span></div></div>'+
+      '<button class="copy" data-k="reply" data-i="'+i+'">Copy</button></div>'+
+      '<div class="body">'+esc(r.text)+'</div>'+
+      '<div class="foot"><div>Replace <span class="cta">[Name]</span> with the reviewer\'s first name</div></div></div>';
+  }).join("") +
+  "<h2>Negative review protocol</h2><div class='info'><ol>"+
+  "<li><b>Cool off first.</b> Never reply angry, never argue facts publicly, never blame the customer.</li>"+
+  "<li><b>Verify with the branch</b> before replying.</li>"+
+  "<li><b>Post the template reply</b> — short, accountable, moves it offline.</li>"+
+  "<li><b>Never confirm client details</b> — not their policy, not whether they're even a customer.</li>"+
+  "<li><b>After it's resolved by phone</b>, politely ask if they'd update the review.</li>"+
+  "<li><b>If it's fake</b> — post the suspected-fake reply and report it (three dots → Report review).</li>"+
+  "<li><b>Anything tricky</b> → screenshot it to Saif for a custom reply.</li></ol></div>";
+}
+
+fetch("posts.json").then(function(r){ return r.json(); }).then(function(d){
+  DATA = d; renderPosts(); renderReplies();
+}).catch(function(){
+  document.getElementById("postList").innerHTML = '<div class="alert"><b>Could not load posts.json.</b> The file should sit next to this page in the speedy-dashboard repo.</div>';
+  document.getElementById("replyList").innerHTML = "";
+});
+
+document.getElementById("branchSel").addEventListener("change", function(e){
+  BR = e.target.value; if(DATA) renderPosts();
+});
+
+document.addEventListener("click", function(e){
+  var t = e.target;
+  if(t.classList.contains("tab")){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("on");});
+    document.querySelectorAll(".pane").forEach(function(b){b.classList.remove("on");});
+    t.classList.add("on"); document.getElementById(t.dataset.pane).classList.add("on"); return;
+  }
+  if(t.classList.contains("copy")){
+    var kind = t.dataset.k, i = +t.dataset.i;
+    var item = kind==="post" ? DATA.posts[i] : DATA.replies[i];
+    var text = item.text;
+    if(kind==="post" && item.scope!=="mv"){
+      var b = DATA.branches[BR];
+      text += "\n\n📍 " + b.name + " — " + b.addr + " · " + b.phone;
+    }
+    var done = function(){ t.textContent="Copied ✓"; t.classList.add("done");
+      setTimeout(function(){ t.textContent = (kind==="post"?"Copy text":"Copy"); t.classList.remove("done"); },1600); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
+    } else fallback(text, done);
+  }
+});
+
+function fallback(text, done){
+  var ta = document.createElement("textarea");
+  ta.value = text; ta.style.position="fixed"; ta.style.opacity="0";
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand("copy"); done(); }catch(err){ alert("Copy failed — select the text manually."); }
+  document.body.removeChild(ta);
+}
+</script>
+</body>
+</html>
