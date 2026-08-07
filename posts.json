@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "updated": "2026-08-07",
+  "hours": {
+    "mon_fri": "9am-7pm",
+    "sat": "10am-5pm",
+    "sun": "Moreno Valley only 10am-5pm; Van Buren, Magnolia and Lake Elsinore closed"
+  },
+  "rotation": [
+    "sr22",
+    "dmv",
+    "hours",
+    "freequote"
+  ],
+  "rotation_note": "Week 3 (hours): Moreno Valley publishes the 'sunday' theme instead of 'hours'. Spanish versions go on Moreno Valley and Magnolia as a second post.",
+  "branches": {
+    "mv": {
+      "name": "Moreno Valley",
+      "addr": "12625 Frederick St #I-1, Moreno Valley",
+      "phone": "(951) 472-0927"
+    },
+    "vb": {
+      "name": "Riverside — Van Buren",
+      "addr": "2955 Van Buren Blvd Ste A7, Riverside",
+      "phone": "(951) 695-1500"
+    },
+    "mg": {
+      "name": "Riverside — Magnolia",
+      "addr": "7010 Magnolia Ave, Riverside",
+      "phone": "(951) 977-9400"
+    },
+    "le": {
+      "name": "Lake Elsinore",
+      "addr": "31948 Mission Trail Ste B, Lake Elsinore",
+      "phone": "(951) 579-4095"
+    }
+  },
+  "posts": [
+    {
+      "id": "sr22_en",
+      "theme": "sr22",
+      "lang": "EN",
+      "order": 1,
+      "title": "SR-22 same day",
+      "cta": "Get quote",
+      "link": "https://speedyins.com",
+      "scope": "all",
+      "text": "DUI? Tickets? Suspended license? We've got you. ✅\n\nSpeedy Insurance files SR-22s SAME DAY — and we accept ALL drivers, no matter the record. Four offices across the Inland Empire, open Mon–Fri 9am–7pm and Saturdays 10am–5pm.\n\nWalk in, call, or get your free quote online today. 🚗",
+      "images": {
+        "mv": "img/posts/sr22_en_mv.png",
+        "vb": "img/posts/sr22_en_vb.png",
+        "mg": "img/posts/sr22_en_mg.png",
+        "le": "img/posts/sr22_en_le.png"
+      }
+    },
+    {
+      "id": "sr22_es",
+      "theme": "sr22",
+      "lang": "ES",
+      "order": 1,
+      "title": "SR-22 mismo día",
+      "cta": "Cotizar",
+      "link": "https://speedyins.com/es.html",
+      "scope": "all",
+      "text": "¿DUI? ¿Tickets? ¿Licencia suspendida? Lo tenemos cubierto. ✅\n\nSpeedy Insurance presenta su SR-22 EL MISMO DÍA — y aceptamos a TODOS los conductores, sin importar su historial. Cuatro oficinas en el Inland Empire, abiertos Lun–Vie 9am–7pm y Sábados 10am–5pm.\n\nVisítenos, llámenos, o pida su cotización gratis hoy. 🚗",
+      "images": {
+        "mv": "img/posts/sr22_es_mv.png",
+        "vb": "img/posts/sr22_es_vb.png",
+        "mg": "img/posts/sr22_es_mg.png",
+        "le": "img/posts/sr22_es_le.png"
+      }
+    },
+    {
+      "id": "dmv_en",
+      "theme": "dmv",
+      "lang": "EN",
+      "order": 2,
+      "title": "DMV services",
+      "cta": "Learn more",
+      "link": "https://speedyins.com",
+      "scope": "all",
+      "text": "Skip the DMV line! 🎉\n\nRegistration renewals, title transfers, VIN verifications and more — handled right in our offices while you take care of your insurance. One stop, no appointment needed.\n\nOpen Mon–Fri 9am–7pm · Sat 10am–5pm. Visit any of our four Inland Empire locations.",
+      "images": {
+        "mv": "img/posts/dmv_en_mv.png",
+        "vb": "img/posts/dmv_en_vb.png",
+        "mg": "img/posts/dmv_en_mg.png",
+        "le": "img/posts/dmv_en_le.png"
+      }
+    },
+    {
+      "id": "dmv_es",
+      "theme": "dmv",
+      "lang": "ES",
+      "order": 2,
+      "title": "Servicios DMV",
+      "cta": "Más información",
+      "link": "https://speedyins.com/es.html",
+      "scope": "all",
+      "text": "¡Olvídese de las filas del DMV! 🎉\n\nRenovación de registración, transferencia de título, verificación de VIN y más — directamente en nuestras oficinas mientras arregla su seguro. Todo en un solo lugar, sin cita.\n\nAbierto Lun–Vie 9am–7pm · Sáb 10am–5pm. Visite cualquiera de nuestras cuatro oficinas.",
+      "images": {
+        "mv": "img/posts/dmv_es_mv.png",
+        "vb": "img/posts/dmv_es_vb.png",
+        "mg": "img/posts/dmv_es_mg.png",
+        "le": "img/posts/dmv_es_le.png"
+      }
+    },
+    {
+      "id": "hours_en",
+      "theme": "hours",
+      "lang": "EN",
+      "order": 3,
+      "title": "Evenings & Saturdays",
+      "cta": "Call now",
+      "link": "",
+      "scope": "all",
+      "text": "Your day doesn't end at 5 — neither does ours. 🕘\n\nSpeedy Insurance is open until 7pm Monday through Friday, and Saturdays 10am–5pm. Evenings and weekends, walk in, call, or chat with us on our website.\n\nReal agents, real answers — English y español.",
+      "images": {
+        "mv": "img/posts/hours_en_mv.png",
+        "vb": "img/posts/hours_en_vb.png",
+        "mg": "img/posts/hours_en_mg.png",
+        "le": "img/posts/hours_en_le.png"
+      }
+    },
+    {
+      "id": "hours_es",
+      "theme": "hours",
+      "lang": "ES",
+      "order": 3,
+      "title": "Tardes y sábados",
+      "cta": "Llamar ahora",
+      "link": "",
+      "scope": "all",
+      "text": "Su día no termina a las 5 — el nuestro tampoco. 🕘\n\nSpeedy Insurance está abierto hasta las 7pm de lunes a viernes, y los sábados de 10am a 5pm. Por las tardes y los fines de semana: visítenos, llámenos, o chatee con nosotros en nuestro sitio web.\n\nAgentes de verdad, respuestas de verdad — hablamos español.",
+      "images": {
+        "mv": "img/posts/hours_es_mv.png",
+        "vb": "img/posts/hours_es_vb.png",
+        "mg": "img/posts/hours_es_mg.png",
+        "le": "img/posts/hours_es_le.png"
+      }
+    },
+    {
+      "id": "sunday_en",
+      "theme": "sunday",
+      "lang": "EN",
+      "order": 3,
+      "title": "Open Sundays",
+      "cta": "Call now",
+      "link": "",
+      "scope": "mv",
+      "text": "Open SUNDAYS in Moreno Valley! 🚗\n\nOur Moreno Valley office at 12625 Frederick St #I-1 is open Sundays 10am–5pm — insurance, same-day SR-22 filings, and DMV services when almost everyone else is closed.\n\nCall (951) 472-0927 or just walk in.",
+      "images": {
+        "mv": "img/posts/sunday_en_mv.png"
+      }
+    },
+    {
+      "id": "sunday_es",
+      "theme": "sunday",
+      "lang": "ES",
+      "order": 3,
+      "title": "Abierto los domingos",
+      "cta": "Llamar ahora",
+      "link": "",
+      "scope": "mv",
+      "text": "¡Abierto los DOMINGOS en Moreno Valley! 🚗\n\nNuestra oficina de Moreno Valley en 12625 Frederick St #I-1 abre los domingos de 10am a 5pm — seguros, SR-22 el mismo día, y servicios del DMV cuando casi todos están cerrados.\n\nLlame al (951) 472-0927 o simplemente visítenos.",
+      "images": {
+        "mv": "img/posts/sunday_es_mv.png"
+      }
+    },
+    {
+      "id": "freequote_en",
+      "theme": "freequote",
+      "lang": "EN",
+      "order": 4,
+      "title": "Free quote CTA",
+      "cta": "Get quote",
+      "link": "https://speedyins.com",
+      "scope": "all",
+      "text": "How much could you be saving on car insurance? 💰\n\nFree quote in minutes — no obligation, no pressure. We shop 20+ carriers to find your best rate, including SR-22, DUI and non-standard drivers other agencies turn away.\n\nCall, walk in, or start online. Mon–Fri 9am–7pm · Sat 10am–5pm.",
+      "images": {
+        "mv": "img/posts/freequote_en_mv.png",
+        "vb": "img/posts/freequote_en_vb.png",
+        "mg": "img/posts/freequote_en_mg.png",
+        "le": "img/posts/freequote_en_le.png"
+      }
+    },
+    {
+      "id": "freequote_es",
+      "theme": "freequote",
+      "lang": "ES",
+      "order": 4,
+      "title": "Cotización gratis",
+      "cta": "Cotizar",
+      "link": "https://speedyins.com/es.html",
+      "scope": "all",
+      "text": "¿Cuánto podría ahorrar en su seguro de auto? 💰\n\nCotización gratis en minutos — sin compromiso y sin presión. Comparamos más de 20 aseguradoras para encontrar su mejor tarifa, incluyendo SR-22, DUI y conductores que otras agencias rechazan.\n\nLlame, visítenos, o empiece en línea. Lun–Vie 9am–7pm · Sáb 10am–5pm.",
+      "images": {
+        "mv": "img/posts/freequote_es_mv.png",
+        "vb": "img/posts/freequote_es_vb.png",
+        "mg": "img/posts/freequote_es_mg.png",
+        "le": "img/posts/freequote_es_le.png"
+      }
+    }
+  ],
+  "replies": [
+    {
+      "id": "r_5star",
+      "lang": "EN",
+      "title": "5-star — general",
+      "text": "Thank you so much for the kind words, [Name]! We're glad we could help. If you ever need anything — insurance, SR-22, or DMV — we're here. 🚗"
+    },
+    {
+      "id": "r_agent",
+      "lang": "EN",
+      "title": "5-star — agent mentioned by name",
+      "text": "Thank you, [Name]! We'll be sure [Agent] hears this — they'll be thrilled. Thank you for trusting Speedy Insurance, and we're here whenever you need us."
+    },
+    {
+      "id": "r_sr22",
+      "lang": "EN",
+      "title": "5-star — SR-22 / DUI mentioned",
+      "text": "Thank you, [Name]! Getting drivers back on the road quickly is what we do — same-day SR-22 filings, no judgment. We appreciate you choosing Speedy Insurance."
+    },
+    {
+      "id": "r_price",
+      "lang": "EN",
+      "title": "5-star — price / savings mentioned",
+      "text": "Thank you, [Name]! Shopping 20+ carriers to find the best rate is exactly the point. Glad we could save you money — see you at renewal!"
+    },
+    {
+      "id": "r_es",
+      "lang": "ES",
+      "title": "5 estrellas — respuesta en español",
+      "text": "¡Muchas gracias por sus amables palabras, [Name]! Nos alegra mucho haberle ayudado. Si necesita algo más — seguro, SR-22, o servicios del DMV — aquí estamos para servirle. 🚗"
+    },
+    {
+      "id": "r_4star",
+      "lang": "EN",
+      "title": "4-star — good but not perfect",
+      "text": "Thank you for the review, [Name]! We're glad we could help — and we'd love to hear what would have made it a 5-star experience. Feel free to call your branch anytime. We appreciate you!"
+    },
+    {
+      "id": "r_3star",
+      "lang": "EN",
+      "title": "3-star or unclear",
+      "text": "Thank you for the feedback, [Name]. We want every visit to be a 5-star one — please call us at (951) 472-0927 and ask for the branch manager so we can hear what happened and make it right."
+    },
+    {
+      "id": "r_neg",
+      "lang": "EN",
+      "title": "1–2 star — negative (escalate to Saif, do not auto-post)",
+      "text": "Hi [Name], we're sorry your experience wasn't what it should have been. We take this seriously and want to make it right. Please call us at (951) 472-0927 and ask for the branch manager — or if you prefer, reply with the best way to reach you. — Speedy Insurance Management"
+    },
+    {
+      "id": "r_fake",
+      "lang": "EN",
+      "title": "Suspected fake (escalate to Saif, do not auto-post)",
+      "text": "Hi [Name], we take all feedback seriously, but we can't locate any record of your visit or policy with us. Please contact us at (951) 472-0927 so we can look into this — we'd like to resolve any genuine concern. — Speedy Insurance Management"
+    }
+  ]
+}
