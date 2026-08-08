@@ -37,8 +37,13 @@ Any post copy that claims "open 7 days" or "9am–8pm" is stale. Stop and flag i
 3. **Moreno Valley substitution:** on the `hours` week, Moreno Valley publishes the `sunday` theme instead. The `sunday` theme is **Moreno Valley only** — never publish it on Van Buren, Magnolia or Lake Elsinore.
 4. **For each of the four branches**, assemble:
    - the post `text` for that theme (English)
-   - the matching graphic: `images[<branch>]` — confirm the filename ends in the correct branch code (`_mv`, `_vb`, `_mg`, `_le`)
+   - the **branch's own graphic** — read `posts.json`, find the post object for the chosen theme, and take `images[<branch>]` for that branch. Each theme has a dedicated, branded picture per branch already made and stored in this repo. Download it from:
+     `https://raw.githubusercontent.com/speedyinsadmin-alt/speedy-dashboard/main/<images[branch] path>`
+     Example — SR-22 week, Van Buren: `images.vb` = `img/posts/sr22_en_vb.png` → download `https://raw.githubusercontent.com/speedyinsadmin-alt/speedy-dashboard/main/img/posts/sr22_en_vb.png` and attach that exact file to the Van Buren post.
+   - **Confirm the branch code** in the filename matches the profile you are posting to (`_mv` Moreno Valley, `_vb` Van Buren, `_mg` Magnolia, `_le` Lake Elsinore). Never attach one branch's graphic to another branch's profile.
    - the `cta` button and `link`
+
+   Available graphics (all 34 pre-made, in `img/posts/`): themes `sr22`, `dmv`, `hours`, `freequote` each have EN + ES × all 4 branches; `sunday` has EN + ES for Moreno Valley only.
 5. **Spanish second post:** on Moreno Valley and Magnolia only, also prepare the `ES` version of the same theme with its `_es_` graphic.
 6. **Publish** — open `business.google.com`, select the branch profile, choose *Add update*, paste the text, attach the graphic, set the button and link.
 7. **STOP before pressing Post.** Leave it filled in and ready. Saif reviews and clicks Post himself. Do not publish public content unattended.
