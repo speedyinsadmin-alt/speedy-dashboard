@@ -175,16 +175,22 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
     <div class="metric-card"><div class="metric-val done">78</div><div class="metric-label">Tasks completed</div></div>
     <div class="metric-card"><div class="metric-val progress">4</div><div class="metric-label">In progress</div></div>
     <div class="metric-card"><div style="display:flex;align-items:flex-end;gap:10px"><div><div class="metric-val" style="color:var(--red)">4</div><div class="metric-label">🔴 High</div></div><div><div class="metric-val" style="color:var(--warning)">3</div><div class="metric-label">🟡 Medium</div></div></div><div class="metric-label" style="margin-top:6px">Action items</div></div>
-    <div class="metric-card"><div class="metric-val" style="color:var(--blue)">84%</div><div class="metric-label">Overall completion</div><div style="font-size:8px;color:var(--muted);margin-top:6px;line-height:1.4;text-align:left">⚠️ Recalculated Aug 7 — Payment system live w/ safety net, Agent Portal v0.5 BETA live, RingCentral→HawkSoft call logging live, TurboRater for Websites deployed EN+ES, 2nd agent onboarded. Blocked: TfW premium-return (Zywave), attorney consent (call recording), 12/12 Vercel function ceiling.</div></div>
+    <div class="metric-card">
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div><div class="metric-val" style="color:#22c55e;font-size:1.5rem">84%</div><div class="metric-label">Operational setup</div></div>
+        <div><div class="metric-val" style="color:var(--blue);font-size:1.5rem">28%</div><div class="metric-label">Platform build</div></div>
+      </div>
+      <div style="font-size:8px;color:var(--muted);margin-top:6px;line-height:1.4;text-align:left"><strong style="color:#22c55e">Operational setup 84%</strong> = agency IT foundation (HawkSoft, integrations, phones, TfW, GBP, security). Nearly done.<br><strong style="color:#60a5fa">Platform build 28%</strong> = replacing HawkSoft with our own Speedy Platform (5 phases): Money ~70% (payments live w/ safety net + audit), Clients/intake ~30%, Carrier data/IVANS ~5%, Operations ~15%, Compliance/cutover 0%. Early but strong — money layer mostly done, rest ahead. Recalculated Aug 8.</div>
+    </div>
   </div>
 
 
   <div class="section-title a2">🔴 Live activity</div>
-  <div style="background:linear-gradient(135deg,rgba(239,68,68,0.22),rgba(239,68,68,0.06));border:2px solid rgba(239,68,68,0.7);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:flex-start;gap:12px" class="a2">
-    <div style="font-size:1.6rem;margin-top:2px">⛔</div>
+  <div style="background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(34,197,94,0.05));border:2px solid rgba(34,197,94,0.6);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:flex-start;gap:12px" class="a2">
+    <div style="font-size:1.6rem;margin-top:2px">✅</div>
     <div>
-      <p style="font-weight:800;color:#fff;margin:0 0 4px;font-size:0.95rem">PRIORITY — Vercel function ceiling reached: <span style="color:#ff6b6b">12 / 12 serverless functions used</span></p>
-      <p style="font-size:0.75rem;color:var(--gray);margin:3px 0 0"><strong style="color:#fbbf24">Action required first thing (Aug 8):</strong> the two RingCentral files (rc-webhook.js, rc-subscribe.js) filled the last two slots on Vercel's Hobby plan. <strong style="color:#fff">Any new API file will fail the build.</strong> Options: (1) fold new endpoints into existing files, or (2) upgrade to Vercel Pro ($20/mo) — Tony's decision. Must be resolved before further platform build.</p>
+      <p style="font-weight:800;color:#fff;margin:0 0 4px;font-size:0.95rem">RESOLVED — Vercel upgraded to Pro: <span style="color:#22c55e">function limit now 12 / 100 (88 slots free)</span></p>
+      <p style="font-size:0.75rem;color:var(--gray);margin:3px 0 0"><strong style="color:#22c55e">Done Aug 8:</strong> upgraded to Vercel Pro ($20/mo) — the 12/12 Hobby ceiling that was blocking all new API work is cleared. Data-training toggle OFF (correct for client PII). New endpoints (Portal Stages 3-4, IVANS AL3 parser, etc.) are now unblocked.</p>
     </div>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.75rem;margin-bottom:1.5rem" class="a2">
@@ -384,31 +390,55 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
   }
   </script>
 
-  <div class="section-title a2">Phase progress</div>
+  <div class="section-title a2">Phase progress — Speedy Platform build (replacing HawkSoft)</div>
   <div class="circles-row a2">
-    <div class="circle-card active-phase">
+    <div class="circle-card active-phase" style="border-color:rgba(34,197,94,0.5)">
       <div class="circle-wrap">
         <svg width="76" height="76" viewBox="0 0 76 76">
           <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="0" />
+          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="60"/>
         </svg>
-        <div class="circle-pct">100%</div>
+        <div class="circle-pct">70%</div>
       </div>
-      <div class="circle-label">Pre-phase</div>
-      <div class="circle-sub">Tech setup</div>
-      <span class="phase-badge badge-active" style="background:rgba(34,197,94,0.2);color:#22c55e;border:1px solid rgba(34,197,94,0.4);">Complete ✓</span>
-    </div>
-    <div class="circle-card" style="border-color:rgba(212,43,43,0.5)">
-      <div class="circle-wrap">
-        <svg width="76" height="76" viewBox="0 0 76 76">
-          <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="121"/>
-        </svg>
-        <div class="circle-pct">60%</div>
-      </div>
-      <div class="circle-label">Phase 1</div>
-      <div class="circle-sub">Automation+CRM</div>
+      <div class="circle-label">Phase A</div>
+      <div class="circle-sub">Money</div>
       <span class="phase-badge badge-active">Active</span>
+    </div>
+    <div class="circle-card">
+      <div class="circle-wrap">
+        <svg width="76" height="76" viewBox="0 0 76 76">
+          <circle class="circle-bg" cx="38" cy="38" r="32"/>
+          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="141"/>
+        </svg>
+        <div class="circle-pct">30%</div>
+      </div>
+      <div class="circle-label">Phase B</div>
+      <div class="circle-sub">Clients &amp; intake</div>
+      <span class="phase-badge badge-active">Active</span>
+    </div>
+    <div class="circle-card">
+      <div class="circle-wrap">
+        <svg width="76" height="76" viewBox="0 0 76 76">
+          <circle class="circle-bg" cx="38" cy="38" r="32"/>
+          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="191"/>
+        </svg>
+        <div class="circle-pct">5%</div>
+      </div>
+      <div class="circle-label">Phase C</div>
+      <div class="circle-sub">Carrier data / IVANS</div>
+      <span class="phase-badge badge-queued">Next up</span>
+    </div>
+    <div class="circle-card">
+      <div class="circle-wrap">
+        <svg width="76" height="76" viewBox="0 0 76 76">
+          <circle class="circle-bg" cx="38" cy="38" r="32"/>
+          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="171"/>
+        </svg>
+        <div class="circle-pct">15%</div>
+      </div>
+      <div class="circle-label">Phase D</div>
+      <div class="circle-sub">Operations</div>
+      <span class="phase-badge badge-active">Started</span>
     </div>
     <div class="circle-card">
       <div class="circle-wrap">
@@ -418,59 +448,12 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.68rem;bor
         </svg>
         <div class="circle-pct">0%</div>
       </div>
-      <div class="circle-label">Phase 2</div>
-      <div class="circle-sub">Sales scripts</div>
-      <span class="phase-badge badge-queued">Queued</span>
-    </div>
-    <div class="circle-card">
-      <div class="circle-wrap">
-        <svg width="76" height="76" viewBox="0 0 76 76">
-          <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="161"/>
-        </svg>
-        <div class="circle-pct">20%</div>
-      </div>
-      <div class="circle-label">Phase 3</div>
-      <div class="circle-sub">Full rebrand</div>
-      <span class="phase-badge badge-active">Active</span>
-    </div>
-    <div class="circle-card" style="border-color:rgba(212,43,43,0.5)">
-      <div class="circle-wrap">
-        <svg width="76" height="76" viewBox="0 0 76 76">
-          <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill active-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="181"/>
-        </svg>
-        <div class="circle-pct">10%</div>
-      </div>
-      <div class="circle-label">Phase 4</div>
-      <div class="circle-sub">Marketing</div>
-      <span class="phase-badge badge-active">Active</span>
-    </div>
-    <div class="circle-card">
-      <div class="circle-wrap">
-        <svg width="76" height="76" viewBox="0 0 76 76">
-          <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill queue-color" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="201.06"/>
-        </svg>
-        <div class="circle-pct">0%</div>
-      </div>
-      <div class="circle-label">Phase 5</div>
-      <div class="circle-sub">Login & sync</div>
+      <div class="circle-label">Phase E</div>
+      <div class="circle-sub">Compliance &amp; cutover</div>
       <span class="phase-badge badge-pending">Pending</span>
     </div>
-    <div class="circle-card" style="border-color:rgba(99,99,255,0.5)">
-      <div class="circle-wrap">
-        <svg width="76" height="76" viewBox="0 0 76 76">
-          <circle class="circle-bg" cx="38" cy="38" r="32"/>
-          <circle class="circle-fill" style="stroke:#8888ff" cx="38" cy="38" r="32" stroke-dasharray="201.06" stroke-dashoffset="100"/>
-        </svg>
-        <div class="circle-pct">50%</div>
-      </div>
-      <div class="circle-label">Training</div>
-      <div class="circle-sub">Ongoing</div>
-      <span class="phase-badge" style="background:rgba(99,99,255,0.2);color:#aaaaff;border:1px solid rgba(99,99,255,0.4);">Ongoing</span>
-    </div>
   </div>
+  <p style="font-size:0.66rem;color:var(--muted,#6b7280);margin:2px 2px 1.5rem;line-height:1.5">Own the <strong style="color:#22c55e">money</strong> first → <strong>clients/intake</strong> → <strong>carrier data (IVANS AL3)</strong> → <strong>policy management</strong> → <strong>compliance &amp; cutover</strong>. HawkSoft runs in parallel until each capability is replaced. (Old operational phases — CRM, marketing, rebrand — are captured in the 84% "Operational setup" metric above.)</p>
 
   <div class="section-title a3">Branch tracker — RingCentral screen pop</div>
   <div class="branch-grid a3">
