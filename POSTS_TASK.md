@@ -74,6 +74,26 @@ Reply templates are in `posts.json` under `replies`. Rules:
 
 ---
 
+## Refresh the GBP dashboard numbers (each run)
+
+While you are in `business.google.com` for posting, you are already looking at each branch profile. Capture the current numbers and update `gbp.html` in this repo so the dashboard stays honest.
+
+For each of the four branches, read from the live Google profile:
+- the **total review count**
+- the **star rating** (e.g. 4.9)
+
+Then update `gbp.html`:
+1. Each branch card has a `<div class="star">X.X★</div>` and `<div class="rev">N reviews</div>` — set these to the live numbers.
+2. Update the top KPIs: **Total reviews** (sum of all four) and **Avg rating** (review-weighted average across the four branches).
+3. Update the header date `<div class="updated">Last updated<br><strong>MONTH D, YYYY</strong></div>` to today's date.
+4. Push `gbp.html` with a fresh SHA (fetch SHA immediately before the PUT).
+
+If you cannot read a branch's number for any reason, leave that branch's existing number unchanged and note it in the report rather than guessing.
+
+**Branch → card mapping in gbp.html:** Van Buren, Magnolia, Moreno Valley, Lake Elsinore (in that order in the file).
+
+---
+
 ## Known gaps
 
 - There is no Google Business Profile API connector available, so publishing is browser-driven, not API-driven.
