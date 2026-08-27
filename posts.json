@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-08-07",
+  "updated": "2026-08-27",
   "hours": {
     "mon_fri": "9am-7pm",
     "sat": "10am-5pm",
@@ -21,7 +21,7 @@
     },
     "vb": {
       "name": "Riverside — Van Buren",
-      "addr": "2955 Van Buren Blvd Ste A7, Riverside",
+      "addr": "2995 Van Buren Blvd Ste A7, Riverside",
       "phone": "(951) 695-1500"
     },
     "mg": {
@@ -33,6 +33,11 @@
       "name": "Lake Elsinore",
       "addr": "32285 Mission Trail P5, Lake Elsinore",
       "phone": "(951) 579-4095"
+    },
+    "co": {
+      "name": "Colton",
+      "addr": "1047 N Mount Vernon Ave, Colton",
+      "phone": "(909) 587-6001"
     }
   },
   "posts": [
@@ -255,6 +260,30 @@
       "lang": "EN",
       "title": "Suspected fake (escalate to Saif, do not auto-post)",
       "text": "Hi [Name], we take all feedback seriously, but we can't locate any record of your visit or policy with us. Please contact us at (951) 472-0927 so we can look into this — we'd like to resolve any genuine concern. — Speedy Insurance Management"
+    },
+    {
+      "id": "r_4star_es",
+      "lang": "ES",
+      "title": "4 estrellas — buena pero no perfecta",
+      "text": "¡Gracias por su reseña, [Name]! Nos alegra haberle ayudado — y nos encantaría saber qué nos habría faltado para merecer las 5 estrellas. Llame a su sucursal cuando guste. ¡Le agradecemos mucho!"
+    },
+    {
+      "id": "r_3star_es",
+      "lang": "ES",
+      "title": "3 estrellas o poco clara",
+      "text": "Gracias por sus comentarios, [Name]. Queremos que cada visita sea de 5 estrellas — por favor llámenos al (951) 472-0927 y pregunte por el gerente de la sucursal para que podamos escuchar lo que pasó y corregirlo."
+    },
+    {
+      "id": "r_neg_es",
+      "lang": "ES",
+      "title": "1–2 estrellas — negativa (escalar a Saif, NO publicar automáticamente)",
+      "text": "Hola [Name], lamentamos mucho que su experiencia no haya sido la que debía ser. Lo tomamos en serio y queremos corregirlo. Por favor llámenos al (951) 472-0927 y pregunte por el gerente de la sucursal — o si prefiere, respóndanos con la mejor manera de comunicarnos con usted. — Gerencia de Speedy Insurance"
+    },
+    {
+      "id": "r_fake_es",
+      "lang": "ES",
+      "title": "Sospecha de reseña falsa (escalar a Saif, NO publicar automáticamente)",
+      "text": "Hola [Name], tomamos en serio todos los comentarios, pero no encontramos ningún registro de su visita o póliza con nosotros. Por favor comuníquese al (951) 472-0927 para poder investigarlo — nos gustaría resolver cualquier inquietud genuina. — Gerencia de Speedy Insurance"
     }
   ]
 }
